@@ -1,9 +1,9 @@
 import { Route, Switch } from 'react-router'
-import Bijoux from './screen/Bijoux'
+import Clothes from './screen/Clothes'
 import Header from './components/Header'
 import Home from './screen/Home'
-import Sacs from './screen/Sacs'
-import Vetements from './screen/Vetements'
+import Jewels from './screen/Jewels'
+import Bags from './screen/Bags'
 
 import './App.css'
 
@@ -13,9 +13,9 @@ const App = () => {
       <Header />
       <Switch>
         <Route path='/home' component={Home}></Route>
-        <Route path='/bijoux' component={Bijoux}></Route>
-        <Route path='/sacs' component={Sacs}></Route>
-        <Route path='/vetements' component={Vetements}></Route>
+        <Route path='/bijoux' component={Jewels}></Route>
+        <Route path='/sacs' component={Bags}></Route>
+        <Route path='/vetements' component={Clothes}></Route>
       </Switch>
     </div>
   )

@@ -13,12 +13,12 @@ const Nav = () => {
         </li>
         <li>
           <NavLink to='/sacs' className='link' activeClassName='selected'>
-            Sacs
+            Maroquinerie
           </NavLink>
         </li>
         <li>
           <NavLink to='/vetements' className='link' activeClassName='selected'>
-            Vêtements
+            Prêt-à-porter
           </NavLink>
         </li>
       </ul>
