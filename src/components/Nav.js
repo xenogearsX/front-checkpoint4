@@ -7,17 +7,17 @@ const Nav = () => {
     <nav id='menu'>
       <ul className='nav'>
         <li>
-          <NavLink to='/bijoux' className='link' activeClassName='selected'>
+          <NavLink to='/jewels' className='link' activeClassName='selected'>
             Bijoux
           </NavLink>
         </li>
         <li>
-          <NavLink to='/sacs' className='link' activeClassName='selected'>
+          <NavLink to='/bags' className='link' activeClassName='selected'>
             Maroquinerie
           </NavLink>
         </li>
         <li>
-          <NavLink to='/vetements' className='link' activeClassName='selected'>
+          <NavLink to='/clothes' className='link' activeClassName='selected'>
             Prêt-à-porter
           </NavLink>
         </li>
