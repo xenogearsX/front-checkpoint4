@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import './Burger.css'
 import Nav from './Nav'
 
-const Burger = () => {
-  const [clicked, setCliked] = useState(false)
-  const handleClick = () => setCliked(!clicked)
+import './Burger.css'
+
+const Burger = header => {
   return (
     <>
-      {clicked ? <Nav /> : null}
+      {header.clicked ? <Nav handleClick={header.handleClick} /> : null}
       <div
         id='menuBurger'
-        className={clicked ? 'clicked' : ''}
-        onClick={() => handleClick()}
+        className={header.clicked ? 'clicked' : ''}
+        onClick={() => header.handleClick()}
       >
         <div className='bar1'></div>
         <div className='bar2'></div>

@@ -1,6 +1,6 @@
 #menu{
   align-items: center;
-  background: rgb(236, 85, 85);
+  background: rgb(241, 113, 113);
   display: flex;
   justify-content: center;
   height: 100%;
@@ -28,4 +28,10 @@
 }
 .selected{
   border-bottom: 3px solid #348AA7;
+}
+
+@media (max-width: 600px){
+  #menu{
+    width:100%;
+  }
 }
