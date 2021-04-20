@@ -50,7 +50,7 @@ const AdminTypes = () => {
         <div className='containerAdmin'>
           <fieldset className='formData'>
             <legend htmlFor='name'>
-              Nom groupe produit<span> * </span>
+              Type produit<span> * </span>
             </legend>
             <input
               type='text'

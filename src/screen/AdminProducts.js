@@ -174,7 +174,7 @@ const AdminProducts = () => {
             <legend htmlFor='compte'>
               Type produit<span> * </span>
             </legend>
-            <select id='typegroup' name='typegroup' onChange={handleChange}>
+            <select id='type' name='type' onChange={handleChange}>
               <option>Sélectionne le type produit</option>
               {select
                 ? select.map(option => (
