@@ -9,7 +9,7 @@ const Burger = () => {
     <>
       {clicked ? <Nav /> : null}
       <div
-        id='menu-burger'
+        id='menuBurger'
         className={clicked ? 'clicked' : ''}
         onClick={() => handleClick()}
       >

@@ -1,7 +1,31 @@
 #menu{
+  align-items: center;
+  background: rgb(236, 85, 85);
+  display: flex;
+  justify-content: center;
   height: 100%;
   position: fixed;
   right: 0;
+  top: 0;
   width: 50%;
   z-index: 10;
+}
+#menu a{
+  color: black;
+  font-family: 'black_jackregular';
+  font-size: xx-large;
+  text-decoration: none;
+}
+#menu li{
+  list-style: none;
+  margin: 10vh 0 10vh 0;
+  width: 100%;
+}
+.nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.selected{
+  border-bottom: 3px solid #348AA7;
 }
