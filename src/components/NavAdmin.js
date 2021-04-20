@@ -3,6 +3,9 @@ import Admin from '../screen/Admin'
 import AdminProducts from '../screen/AdminProducts'
 import AdminTypeGroups from '../screen/AdminTypeGroups'
 import AdminTypes from '../screen/AdminTypes'
+import ModifProduct from '../screen/ModifProduct'
+import ModifType from '../screen/ModifType'
+import ModifTypeGroup from '../screen/ModifTypeGroup'
 import SeeProducts from '../screen/SeeProducts'
 import SeeTypeGroups from '../screen/SeeTypeGroups'
 import SeeTypes from '../screen/SeeTypes'
@@ -77,6 +80,9 @@ const NavAdmin = () => {
           <Route path='/admin/seeproducts' component={SeeProducts} />
           <Route path='/admin/seetypes' component={SeeTypes} />
           <Route path='/admin/seetypegroups' component={SeeTypeGroups} />
+          <Route path='/admin/modifproduct/:id' component={ModifProduct} />
+          <Route path='/admin/modiftypegroup/:id' component={ModifTypeGroup} />
+          <Route path='/admin/modiftype/:id' component={ModifType} />
         </Switch>
       </div>
     </div>

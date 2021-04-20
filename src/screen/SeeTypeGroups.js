@@ -30,7 +30,7 @@ const SeeTypeGroups = () => {
               <td>{d.idtypegroup}</td>
               <td>{d.groupname}</td>
               <td>
-                <Link to={`/modiftypegroup/${d.idtypegroup}`}>
+                <Link to={`/admin/modiftypegroup/${d.idtypegroup}`}>
                   <img src={modifier}></img>
                 </Link>
               </td>

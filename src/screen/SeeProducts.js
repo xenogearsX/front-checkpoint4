@@ -48,7 +48,7 @@ const SeeProducts = () => {
               </td>
               <td>{d.type_idtype}</td>
               <td>
-                <Link to={`/modifproduct/${d.idproduct}`}>
+                <Link to={`/admin/modifproduct/${d.idproduct}`}>
                   <img src={modifier}></img>
                 </Link>
               </td>
