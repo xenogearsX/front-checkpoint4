@@ -3,6 +3,9 @@ import Admin from '../screen/Admin'
 import AdminProducts from '../screen/AdminProducts'
 import AdminTypeGroups from '../screen/AdminTypeGroups'
 import AdminTypes from '../screen/AdminTypes'
+import SeeProducts from '../screen/SeeProducts'
+import SeeTypeGroups from '../screen/SeeTypeGroups'
+import SeeTypes from '../screen/SeeTypes'
 
 const NavAdmin = () => {
   return (
@@ -15,7 +18,7 @@ const NavAdmin = () => {
               className='link'
               activeClassName='selected'
             >
-              Produit
+              Création produit
             </NavLink>
           </li>
           <li>
@@ -24,7 +27,7 @@ const NavAdmin = () => {
               className='link'
               activeClassName='selected'
             >
-              Type
+              Création type produit
             </NavLink>
           </li>
           <li>
@@ -33,7 +36,34 @@ const NavAdmin = () => {
               className='link'
               activeClassName='selected'
             >
-              Groupe Produit
+              Création groupe produit
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/admin/seeproducts'
+              className='link'
+              activeClassName='selected'
+            >
+              Voir produits
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/admin/seetypes'
+              className='link'
+              activeClassName='selected'
+            >
+              Voir types produits
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/admin/seetypegroups'
+              className='link'
+              activeClassName='selected'
+            >
+              Voir groupes produits
             </NavLink>
           </li>
         </ul>
@@ -44,6 +74,9 @@ const NavAdmin = () => {
           <Route path='/admin/products' component={AdminProducts} />
           <Route path='/admin/types' component={AdminTypes} />
           <Route path='/admin/typegroups' component={AdminTypeGroups} />
+          <Route path='/admin/seeproducts' component={SeeProducts} />
+          <Route path='/admin/seetypes' component={SeeTypes} />
+          <Route path='/admin/seetypegroups' component={SeeTypeGroups} />
         </Switch>
       </div>
     </div>
