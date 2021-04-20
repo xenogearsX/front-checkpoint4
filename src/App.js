@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router'
 import Bags from './screen/Bags'
 import Clothes from './screen/Clothes'
+import Details from './screen/Details'
 import Header from './components/Header'
 import Home from './screen/Home'
 import Jewels from './screen/Jewels'
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/bags' component={Bags} />
         <Route path='/clothes' component={Clothes} />
         <Route path='/admin' component={NavAdmin} />
+        <Route path='/details/:id' component={Details} />
       </Switch>
     </div>
   )
