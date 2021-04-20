@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-import modifier from '../images/Modifier.png'
+import modifier from '../data/images/Modifier.png'
 
 const SeeProducts = () => {
   const [product, setProduct] = useState([])
