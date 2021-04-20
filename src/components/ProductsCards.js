@@ -20,7 +20,9 @@ const ProductsCards = () => {
     <div className='cards'>
       {products.map(product => (
         <div className='card' key={product.idproduct}>
-          <Link to={`/details/${product.idproduct}`}>
+          <Link
+            to={{ pathname: `/details/${product.idproduct}`, props: 'home' }}
+          >
             <img src={product.smallurl} alt={product.name} />
             <p>{product.name}</p>
             <p>{product.shortdescription}</p>

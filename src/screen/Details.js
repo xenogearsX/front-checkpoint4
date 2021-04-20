@@ -1,5 +1,10 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
+
+import './Details.css'
+
+import arrow from '../data/images/arrow.png'
+import { Link } from 'react-router-dom'
 
 const Details = id => {
   const [product, setProduct] = useState({})
@@ -14,13 +19,17 @@ const Details = id => {
   }, [])
   return (
     <div className='details'>
-      <img src={product.bigurl} alt={product.name} />
-      <p>{product.name}</p>
+      <img src={product.bigurl} alt={product.name} className='image' />
+      <div className='detailsTitle'>
+        <Link to={`/${id.location.props}`}>
+          <img src={arrow} alt='arrow' className='arrow' />
+        </Link>
+        <h1>{product.name}</h1>
+        <p className='right'></p>
+      </div>
       <p>{product.longdescription}</p>
-      <p>{product.price}</p>
-      <p>{product.stock}</p>
-      <p>{}</p>
-      <p>{}</p>
+      <p>Prix: {product.price} €</p>
+      <p>Stock: {product.stock}</p>
     </div>
   )
 }

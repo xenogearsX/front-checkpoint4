@@ -16,7 +16,7 @@ const Bags = () => {
     <div className='cards'>
       {bags.map(bag => (
         <div className='card' key={bag.idproduct}>
-          <Link to={`/details/${bag.idproduct}`}>
+          <Link to={{ pathname: `/details/${bag.idproduct}`, props: 'bags' }}>
             <img src={bag.smallurl} alt={bag.name} />
             <p>{bag.name}</p>
             <p>{bag.shortdescription}</p>

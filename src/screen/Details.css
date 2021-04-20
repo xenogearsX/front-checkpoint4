@@ -1,0 +1,21 @@
+.arrow{
+  height: 50px;
+  width: 50px;
+}
+.details{
+  font-family: "black_jackregular";
+}
+.detailsTitle{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.image{
+  width: 30%;
+}
+
+@media (max-width: 600px){
+  .image{
+    width: 60%;
+  }
+}

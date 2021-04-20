@@ -1,17 +1,17 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const AdminProducts = () => {
-  const [shortDes, setShortDes] = useState('')
-  const [longDes, setLongDes] = useState('')
-  const [price, setPrice] = useState('')
-  const [stock, setStock] = useState('')
-  const [smallUrl, setSmallUrl] = useState('')
   const [bigUrl, setBigUrl] = useState('')
-  const [typeIdType, setTypeIdType] = useState('')
+  const [longDes, setLongDes] = useState('')
   const [message, setMessage] = useState(null)
   const [name, setName] = useState('')
+  const [price, setPrice] = useState('')
   const [select, setSelect] = useState(null)
+  const [shortDes, setShortDes] = useState('')
+  const [smallUrl, setSmallUrl] = useState('')
+  const [stock, setStock] = useState('')
+  const [typeIdType, setTypeIdType] = useState('')
 
   const allPost = {
     name: name,

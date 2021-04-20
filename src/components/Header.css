@@ -26,10 +26,8 @@
   color: rgb(241, 113, 113);
   font-family: 'BallparkWeiner';
   font-size: 2rem;
-  text-decoration: none;
-}
-.logo{
   margin-left: 2rem;
+  text-decoration: none;
 }
 #menuBurger{
   margin-right: 2rem;
