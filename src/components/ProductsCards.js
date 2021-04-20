@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+import './ProductsCards.css'
+
 const ProductsCards = () => {
   const [products, setProducts] = useState([])
   useEffect(() => {
@@ -17,18 +19,15 @@ const ProductsCards = () => {
   return (
     <div className='cards'>
       {products.map(product => (
-        <Link
-          to={`/details/${product.idproduct}`}
-          className='card'
-          key={product.idproduct}
-        >
-          <img src={product.smallurl} alt={product.name} />
-
-          <p>{product.name}</p>
-          <p>{product.shortdescription}</p>
-          <p>{product.price}</p>
-          <p>{product.stock}</p>
-        </Link>
+        <div className='card' key={product.idproduct}>
+          <Link to={`/details/${product.idproduct}`}>
+            <img src={product.smallurl} alt={product.name} />
+            <p>{product.name}</p>
+            <p>{product.shortdescription}</p>
+            <p>Prix: {product.price} €</p>
+            <p>Stock: {product.stock}</p>
+          </Link>
+        </div>
       ))}
     </div>
   )
