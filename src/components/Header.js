@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header id='header'>
-      <Link to='/home' className='logo'>
+      <Link to='/' className='logo'>
         Bibelot.com
       </Link>
       <Burger clicked={clicked} handleClick={handleClick} />

@@ -75,7 +75,7 @@ const ModifProduct = product => {
   return (
     <div className='form'>
       <div className='formTitle'>
-        <h1>Création d&apos;un produit</h1>
+        <h1>Modification d&apos;un produit</h1>
       </div>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
