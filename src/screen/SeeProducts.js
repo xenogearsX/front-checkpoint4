@@ -15,7 +15,8 @@ const SeeProducts = () => {
       })
   }, [])
   return (
-    <div>
+    <div className='table'>
+      <h1>Produits dans la BDD</h1>
       <table>
         <thead>
           <tr>
@@ -41,10 +42,14 @@ const SeeProducts = () => {
               <td>{d.price}</td>
               <td>{d.stock}</td>
               <td>
-                <a href={d.smallurl} alt={d.name} />
+                <a href={d.smallurl} alt={d.name}>
+                  Thumb
+                </a>
               </td>
               <td>
-                <a href={d.bigurl} alt={d.name} />
+                <a href={d.bigurl} alt={d.name}>
+                  Full
+                </a>
               </td>
               <td>{d.type_idtype}</td>
               <td>

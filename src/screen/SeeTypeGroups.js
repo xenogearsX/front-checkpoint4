@@ -15,7 +15,8 @@ const SeeTypeGroups = () => {
       })
   }, [])
   return (
-    <div>
+    <div className='table'>
+      <h1>Groupes produits dans la BDD</h1>
       <table>
         <thead>
           <tr>

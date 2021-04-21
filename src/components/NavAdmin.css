@@ -1,0 +1,74 @@
+.adminForm{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.adminForm h1{
+  color: rgb(241, 113, 113);
+  font-family: 'black_jackregular';
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.adminForm span{
+  color: rgb(241, 113, 113);
+}
+.containerAdmin{
+  font-family: 'black_jackregular';
+  width: 100%;
+}  
+.form{
+  width: 100%;
+}
+.form form{
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.form input, .form select{
+  border: rgb(241, 113, 113) 1px solid;
+  font-family: 'black_jackregular';
+  margin: 1rem;
+  width: 90%;
+}
+.form select{
+  text-align: center;
+}
+#navAdmin{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.navAdmin{
+  width: 100%;
+}
+.navAdmin a{
+  color: black;
+  font-family: 'black_jackregular';
+  text-decoration: none;
+}
+.navAdmin li{
+  background: rgb(241, 113, 113);
+  list-style: none;
+  padding: 1rem;
+}
+.navAdmin ul{
+  background: rgb(241, 113, 113);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 100%;
+}
+.table a{
+  color: rgb(241, 113, 113);
+}
+.table td, .table th{
+  border: 1px solid black;
+  vertical-align: middle;
+}
+.table th{
+  background: rgb(241, 113, 113);
+}

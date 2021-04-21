@@ -59,7 +59,7 @@ const ModifTypeGroup = typegroup => {
           </p>
           <div className='formData'>
             <input
-              className='btnEnvoyer'
+              className='send'
               type='submit'
               value='Valider le groupe de produit'
             />

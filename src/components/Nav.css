@@ -27,7 +27,7 @@
   justify-content: space-around;
 }
 .selected{
-  border-bottom: 3px solid #348AA7;
+  border-bottom: 3px solid black;
 }
 
 @media (max-width: 600px){

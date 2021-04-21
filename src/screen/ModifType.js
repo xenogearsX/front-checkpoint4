@@ -81,7 +81,7 @@ const ModifType = types => {
           </p>
           <div className='formData'>
             <input
-              className='btnEnvoyer'
+              className='send'
               type='submit'
               value='Valider le type produit'
             />

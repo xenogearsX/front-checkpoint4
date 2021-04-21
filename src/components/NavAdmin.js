@@ -10,6 +10,8 @@ import SeeProducts from '../screen/SeeProducts'
 import SeeTypeGroups from '../screen/SeeTypeGroups'
 import SeeTypes from '../screen/SeeTypes'
 
+import './NavAdmin.css'
+
 const NavAdmin = () => {
   return (
     <div id='navAdmin'>

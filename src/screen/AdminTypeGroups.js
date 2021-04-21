@@ -48,9 +48,9 @@ const AdminTypeGroups = () => {
           </p>
           <div className='formData'>
             <input
-              className='btnEnvoyer'
+              className='send'
               type='submit'
-              value='Valider le groupe de produit'
+              value='Valider le groupe produit'
             />
           </div>
         </div>

@@ -189,11 +189,7 @@ const AdminProducts = () => {
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input
-              className='btnEnvoyer'
-              type='submit'
-              value='Valider le type produit'
-            />
+            <input className='send' type='submit' value='Valider le produit' />
           </div>
         </div>
       </form>

@@ -15,7 +15,8 @@ const SeeTypes = () => {
       })
   }, [])
   return (
-    <div>
+    <div className='table'>
+      <h1>Types produits dans la BDD</h1>
       <table>
         <thead>
           <tr>
