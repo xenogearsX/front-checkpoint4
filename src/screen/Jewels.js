@@ -16,7 +16,7 @@ const Jewels = () => {
   }, [])
 
   return (
-    <div className='globalCards'>
+    <div className='globalCard'>
       <Select props={jewels} filter={setFilter} />
       <div className='cards'>
         {filter === 'all'

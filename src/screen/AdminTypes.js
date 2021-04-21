@@ -45,7 +45,7 @@ const AdminTypes = () => {
       <div className='formTitle'>
         <h1>Création d&apos;un type produit</h1>
       </div>
-      {message ? <p>{message}</p> : null}
+      {message ? <p className='message'>{message}</p> : null}
       <form onSubmit={submitForm}>
         <div className='containerAdmin'>
           <fieldset className='formData'>

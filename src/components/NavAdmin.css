@@ -35,6 +35,9 @@
 .form select{
   text-align: center;
 }
+.message{
+  font-family: 'black_jackregular';
+}
 #navAdmin{
   align-items: center;
   display: flex;

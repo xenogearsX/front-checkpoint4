@@ -27,7 +27,7 @@ const AdminTypeGroups = () => {
       <div className='formTitle'>
         <h1>Création d&apos;un groupe produit</h1>
       </div>
-      {message ? <p>{message}</p> : null}
+      {message ? <p className='message'>{message}</p> : null}
       <form onSubmit={submitForm}>
         <div className='containerAdmin'>
           <fieldset className='formData'>

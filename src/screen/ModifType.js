@@ -47,7 +47,7 @@ const ModifType = types => {
       <div className='formTitle'>
         <h1>Modification du type produit {types.match.params.id}</h1>
       </div>
-      {message ? <p>{message}</p> : null}
+      {message ? <p className='message'>{message}</p> : null}
       <form onSubmit={submitForm}>
         <div className='containerAdmin'>
           <fieldset className='formData'>

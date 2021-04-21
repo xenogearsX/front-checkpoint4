@@ -1,24 +1,18 @@
 .card{
   font-family: "black_jackregular";
   padding: 20px;
-  width: 30%;
+  width: 350px;
 }
 .card a{
   color: black;
   text-decoration: none;
 }
 .card img{
-  height: 30%;
+  height: 350px;
   width: 100%;
 }
 .cards{
   display: flex;
   flex-wrap: wrap ;
   justify-content: space-around;
-}
-
-@media (max-width: 600px){
-  .card{
-    height: 350px;
-  }
 }
