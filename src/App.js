@@ -42,7 +42,12 @@ const App = () => {
             <Clothes {...props} setCart={setCartItems} cartItems={cartItems} />
           )}
         />
-        <Route path='/details/:id' component={Details} />
+        <Route
+          path='/details/:id'
+          render={props => (
+            <Details {...props} setCart={setCartItems} cartItems={cartItems} />
+          )}
+        />
         <Route
           path='/jewels'
           render={props => (

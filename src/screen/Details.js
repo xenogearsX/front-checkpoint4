@@ -30,6 +30,15 @@ const Details = id => {
       <p>{product.longdescription}</p>
       <p>Prix: {product.price} €</p>
       <p>Stock: {product.stock}</p>
+      <button
+        onClick={() => {
+          const tempCart = id.cartItems
+          tempCart.push(product)
+          id.setCart(tempCart)
+        }}
+      >
+        +
+      </button>
     </div>
   )
 }
