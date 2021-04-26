@@ -1,9 +1,9 @@
 import ProductsCards from '../components/ProductsCards'
 
-const Home = () => {
+const Home = cart => {
   return (
     <div id='home'>
-      <ProductsCards />
+      <ProductsCards setCart={cart.setCart} cartItems={cart.cartItems} />
     </div>
   )
 }

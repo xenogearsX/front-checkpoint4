@@ -5,7 +5,7 @@ import Select from './Select'
 
 import './ProductsCards.css'
 
-const ProductsCards = () => {
+const ProductsCards = cart => {
   const [filter, setFilter] = useState('all')
   const [products, setProducts] = useState([])
   useEffect(() => {
@@ -34,6 +34,19 @@ const ProductsCards = () => {
                   <p>Prix: {product.price} €</p>
                   <p>Stock: {product.stock}</p>
                 </Link>
+                <button
+                  onClick={() => {
+                    const tempCart = cart.cartItems
+                    tempCart.push(
+                      products.filter(
+                        item => item.idproduct === product.idproduct
+                      )[0]
+                    )
+                    cart.setCart(tempCart)
+                  }}
+                >
+                  +
+                </button>
               </div>
             ))
           : products
@@ -52,6 +65,19 @@ const ProductsCards = () => {
                     <p>Prix: {product.price} €</p>
                     <p>Stock: {product.stock}</p>
                   </Link>
+                  <button
+                    onClick={() =>
+                      cart.setCart(
+                        cart.cartItems.push(
+                          products.filter(
+                            item => item.idproduct === product.idproduct
+                          )
+                        )
+                      )
+                    }
+                  >
+                    +
+                  </button>
                 </div>
               ))}
       </div>

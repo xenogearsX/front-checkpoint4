@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Select from '../components/Select'
 
-const Clothes = () => {
+const Clothes = cart => {
   const [clothes, setClothes] = useState([])
   const [filter, setFilter] = useState('all')
 
@@ -34,6 +34,19 @@ const Clothes = () => {
                   <p>Prix: {clothe.price} €</p>
                   <p>Stock: {clothe.stock}</p>
                 </Link>
+                <button
+                  onClick={() => {
+                    const tempCart = cart.cartItems
+                    tempCart.push(
+                      clothes.filter(
+                        item => item.idproduct === clothe.idproduct
+                      )[0]
+                    )
+                    cart.setCart(tempCart)
+                  }}
+                >
+                  +
+                </button>
               </div>
             ))
           : clothes
@@ -52,6 +65,19 @@ const Clothes = () => {
                     <p>Prix: {clothe.price} €</p>
                     <p>Stock: {clothe.stock}</p>
                   </Link>
+                  <button
+                    onClick={() => {
+                      const tempCart = cart.cartItems
+                      tempCart.push(
+                        clothes.filter(
+                          item => item.idproduct === clothe.idproduct
+                        )[0]
+                      )
+                      cart.setCart(tempCart)
+                    }}
+                  >
+                    +
+                  </button>
                 </div>
               ))}
       </div>
