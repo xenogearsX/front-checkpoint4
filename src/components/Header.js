@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 import './Header.css'
 
+import cart from '../data/images/cart.png'
+
 const Header = () => {
   const [clicked, setCliked] = useState(false)
   const handleClick = () => setCliked(!clicked)
@@ -13,7 +15,12 @@ const Header = () => {
       <Link to='/' className='logo'>
         Bibelot.com
       </Link>
-      <Burger clicked={clicked} handleClick={handleClick} />
+      <div className='icon'>
+        <Link to='/cart'>
+          <img src={cart} />
+        </Link>
+        <Burger clicked={clicked} handleClick={handleClick} />
+      </div>
     </header>
   )
 }

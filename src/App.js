@@ -1,4 +1,5 @@
 import Bags from './screen/Bags'
+import Cart from './components/Cart'
 import Clothes from './screen/Clothes'
 import Details from './screen/Details'
 import Header from './components/Header'
@@ -16,6 +17,7 @@ const App = () => {
       <Switch>
         <Route path='/admin' component={NavAdmin} />
         <Route path='/bags' component={Bags} />
+        <Route path='/cart' component={Cart} />
         <Route path='/clothes' component={Clothes} />
         <Route path='/details/:id' component={Details} />
         <Route exact path='/' component={Home} />
