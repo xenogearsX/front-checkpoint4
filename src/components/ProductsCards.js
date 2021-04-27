@@ -37,12 +37,26 @@ const ProductsCards = cart => {
                 <button
                   onClick={() => {
                     const tempCart = cart.cartItems
-                    tempCart.push(
-                      products.filter(
+                    if (
+                      !tempCart.some(
                         item => item.idproduct === product.idproduct
-                      )[0]
-                    )
-                    cart.setCart(tempCart)
+                      )
+                    ) {
+                      tempCart.push({
+                        ...products.filter(
+                          item => item.idproduct === product.idproduct
+                        )[0],
+                        quantity: 1
+                      })
+                      cart.setCart(tempCart)
+                    } else {
+                      tempCart[
+                        tempCart.findIndex(
+                          item => item.idproduct === product.idproduct
+                        )
+                      ].quantity += 1
+                      cart.setCart(tempCart)
+                    }
                   }}
                 >
                   +
@@ -66,15 +80,29 @@ const ProductsCards = cart => {
                     <p>Stock: {product.stock}</p>
                   </Link>
                   <button
-                    onClick={() =>
-                      cart.setCart(
-                        cart.cartItems.push(
-                          products.filter(
+                    onClick={() => {
+                      const tempCart = cart.cartItems
+                      if (
+                        !tempCart.some(
+                          item => item.idproduct === product.idproduct
+                        )
+                      ) {
+                        tempCart.push({
+                          ...products.filter(
+                            item => item.idproduct === product.idproduct
+                          )[0],
+                          quantity: 1
+                        })
+                        cart.setCart(tempCart)
+                      } else {
+                        tempCart[
+                          tempCart.findIndex(
                             item => item.idproduct === product.idproduct
                           )
-                        )
-                      )
-                    }
+                        ].quantity += 1
+                        cart.setCart(tempCart)
+                      }
+                    }}
                   >
                     +
                   </button>
