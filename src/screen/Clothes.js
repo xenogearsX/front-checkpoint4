@@ -37,12 +37,26 @@ const Clothes = cart => {
                 <button
                   onClick={() => {
                     const tempCart = cart.cartItems
-                    tempCart.push(
-                      clothes.filter(
+                    if (
+                      !tempCart.some(
                         item => item.idproduct === clothe.idproduct
-                      )[0]
-                    )
-                    cart.setCart(tempCart)
+                      )
+                    ) {
+                      tempCart.push({
+                        ...clothes.filter(
+                          item => item.idproduct === clothe.idproduct
+                        )[0],
+                        quantity: 1
+                      })
+                      cart.setCart(tempCart)
+                    } else {
+                      tempCart[
+                        tempCart.findIndex(
+                          item => item.idproduct === clothe.idproduct
+                        )
+                      ].quantity += 1
+                      cart.setCart(tempCart)
+                    }
                   }}
                 >
                   +
@@ -68,12 +82,26 @@ const Clothes = cart => {
                   <button
                     onClick={() => {
                       const tempCart = cart.cartItems
-                      tempCart.push(
-                        clothes.filter(
+                      if (
+                        !tempCart.some(
                           item => item.idproduct === clothe.idproduct
-                        )[0]
-                      )
-                      cart.setCart(tempCart)
+                        )
+                      ) {
+                        tempCart.push({
+                          ...clothes.filter(
+                            item => item.idproduct === clothe.idproduct
+                          )[0],
+                          quantity: 1
+                        })
+                        cart.setCart(tempCart)
+                      } else {
+                        tempCart[
+                          tempCart.findIndex(
+                            item => item.idproduct === clothe.idproduct
+                          )
+                        ].quantity += 1
+                        cart.setCart(tempCart)
+                      }
                     }}
                   >
                     +

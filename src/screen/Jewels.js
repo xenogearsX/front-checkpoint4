@@ -37,12 +37,24 @@ const Jewels = cart => {
                 <button
                   onClick={() => {
                     const tempCart = cart.cartItems
-                    tempCart.push(
-                      jewels.filter(
-                        item => item.idproduct === jewel.idproduct
-                      )[0]
-                    )
-                    cart.setCart(tempCart)
+                    if (
+                      !tempCart.some(item => item.idproduct === jewel.idproduct)
+                    ) {
+                      tempCart.push({
+                        ...jewels.filter(
+                          item => item.idproduct === jewel.idproduct
+                        )[0],
+                        quantity: 1
+                      })
+                      cart.setCart(tempCart)
+                    } else {
+                      tempCart[
+                        tempCart.findIndex(
+                          item => item.idproduct === jewel.idproduct
+                        )
+                      ].quantity += 1
+                      cart.setCart(tempCart)
+                    }
                   }}
                 >
                   +
@@ -68,12 +80,26 @@ const Jewels = cart => {
                   <button
                     onClick={() => {
                       const tempCart = cart.cartItems
-                      tempCart.push(
-                        jewels.filter(
+                      if (
+                        !tempCart.some(
                           item => item.idproduct === jewel.idproduct
-                        )[0]
-                      )
-                      cart.setCart(tempCart)
+                        )
+                      ) {
+                        tempCart.push({
+                          ...jewels.filter(
+                            item => item.idproduct === jewel.idproduct
+                          )[0],
+                          quantity: 1
+                        })
+                        cart.setCart(tempCart)
+                      } else {
+                        tempCart[
+                          tempCart.findIndex(
+                            item => item.idproduct === jewel.idproduct
+                          )
+                        ].quantity += 1
+                        cart.setCart(tempCart)
+                      }
                     }}
                   >
                     +

@@ -33,10 +33,24 @@ const Bags = cart => {
                 <button
                   onClick={() => {
                     const tempCart = cart.cartItems
-                    tempCart.push(
-                      bags.filter(item => item.idproduct === bag.idproduct)[0]
-                    )
-                    cart.setCart(tempCart)
+                    if (
+                      !tempCart.some(item => item.idproduct === bag.idproduct)
+                    ) {
+                      tempCart.push({
+                        ...bags.filter(
+                          item => item.idproduct === bag.idproduct
+                        )[0],
+                        quantity: 1
+                      })
+                      cart.setCart(tempCart)
+                    } else {
+                      tempCart[
+                        tempCart.findIndex(
+                          item => item.idproduct === bag.idproduct
+                        )
+                      ].quantity += 1
+                      cart.setCart(tempCart)
+                    }
                   }}
                 >
                   +
@@ -62,10 +76,24 @@ const Bags = cart => {
                   <button
                     onClick={() => {
                       const tempCart = cart.cartItems
-                      tempCart.push(
-                        bags.filter(item => item.idproduct === bag.idproduct)[0]
-                      )
-                      cart.setCart(tempCart)
+                      if (
+                        !tempCart.some(item => item.idproduct === bag.idproduct)
+                      ) {
+                        tempCart.push({
+                          ...bags.filter(
+                            item => item.idproduct === bag.idproduct
+                          )[0],
+                          quantity: 1
+                        })
+                        cart.setCart(tempCart)
+                      } else {
+                        tempCart[
+                          tempCart.findIndex(
+                            item => item.idproduct === bag.idproduct
+                          )
+                        ].quantity += 1
+                        cart.setCart(tempCart)
+                      }
                     }}
                   >
                     +
