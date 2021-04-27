@@ -1,0 +1,25 @@
+.cart{
+  font-family: 'black_jackregular';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart h2{
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+.cart img{
+  height: 50px;
+  width: 50px;
+}
+.cart td, .cart th{
+  border: 1px solid black;
+  padding: 5px;
+  vertical-align: middle;
+}
+.cart th{
+  background: rgb(241, 113, 113);
+}
+.quantityOperation{
+  cursor: pointer;
+}

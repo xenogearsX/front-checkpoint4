@@ -34,7 +34,9 @@ const App = () => {
         />
         <Route
           path='/cart'
-          render={props => <Cart {...props} cartItems={cartItems} />}
+          render={props => (
+            <Cart {...props} setCart={setCartItems} cartItems={cartItems} />
+          )}
         />
         <Route
           path='/clothes'
