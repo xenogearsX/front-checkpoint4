@@ -33,8 +33,18 @@ const Details = id => {
       <button
         onClick={() => {
           const tempCart = id.cartItems
-          tempCart.push(product)
-          id.setCart(tempCart)
+          if (!tempCart.some(item => item.idproduct === product.idproduct)) {
+            tempCart.push({
+              ...product,
+              quantity: 1
+            })
+            id.setCart(tempCart)
+          } else {
+            tempCart[
+              tempCart.findIndex(item => item.idproduct === product.idproduct)
+            ].quantity += 1
+            id.setCart(tempCart)
+          }
         }}
       >
         +
