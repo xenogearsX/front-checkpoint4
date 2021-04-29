@@ -38,11 +38,13 @@ const Details = id => {
               ...product,
               quantity: 1
             })
+            id.setTrigger(!id.trigger)
             id.setCart(tempCart)
           } else {
             tempCart[
               tempCart.findIndex(item => item.idproduct === product.idproduct)
             ].quantity += 1
+            id.setTrigger(!id.trigger)
             id.setCart(tempCart)
           }
         }}

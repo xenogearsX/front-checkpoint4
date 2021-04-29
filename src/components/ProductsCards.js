@@ -48,6 +48,7 @@ const ProductsCards = cart => {
                         )[0],
                         quantity: 1
                       })
+                      cart.setTrigger(!cart.trigger)
                       cart.setCart(tempCart)
                     } else {
                       tempCart[
@@ -55,6 +56,7 @@ const ProductsCards = cart => {
                           item => item.idproduct === product.idproduct
                         )
                       ].quantity += 1
+                      cart.setTrigger(!cart.trigger)
                       cart.setCart(tempCart)
                     }
                   }}
@@ -93,6 +95,7 @@ const ProductsCards = cart => {
                           )[0],
                           quantity: 1
                         })
+                        cart.setTrigger(!cart.trigger)
                         cart.setCart(tempCart)
                       } else {
                         tempCart[
@@ -100,6 +103,7 @@ const ProductsCards = cart => {
                             item => item.idproduct === product.idproduct
                           )
                         ].quantity += 1
+                        cart.setTrigger(!cart.trigger)
                         cart.setCart(tempCart)
                       }
                     }}

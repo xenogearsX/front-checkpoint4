@@ -17,6 +17,7 @@ const CartItem = item => {
       <td
         className='quantityOperation'
         onClick={() => {
+          item.setTrigger(!item.trigger)
           if (quantity > 0) {
             setQuantity(quantity - 1)
             tempCart[
@@ -41,6 +42,7 @@ const CartItem = item => {
             )
           ].quantity += 1
           item.setCart(tempCart)
+          item.setTrigger(!item.trigger)
         }}
       >
         +

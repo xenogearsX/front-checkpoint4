@@ -1,16 +1,8 @@
 import CartItem from './CartItem'
 
 import './Cart.css'
-import { useEffect, useState } from 'react'
 
 const Cart = cart => {
-  const [total, setTotal] = useState(0)
-  useEffect(() => {
-    document
-      .querySelectorAll('.price')
-      .forEach(price => setTotal(total + Number(price.innerHTML)))
-  }, [])
-
   return (
     <div className='cart'>
       <h2>Products in your cart</h2>
@@ -34,11 +26,13 @@ const Cart = cart => {
                 cart={cart.cartItems}
                 setCart={cart.setCart}
                 key={item.idproduct}
+                setTrigger={cart.setTrigger}
+                trigger={cart.trigger}
               />
             ))}
             <tr>
               <td colSpan='6'>total</td>
-              <td>1 milliard</td>
+              <td>{cart.total}</td>
             </tr>
           </tbody>
         </table>

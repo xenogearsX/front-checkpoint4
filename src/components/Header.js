@@ -1,15 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Burger from './Burger'
 import { Link } from 'react-router-dom'
 
 import './Header.css'
 
-import cart from '../data/images/cart.png'
+import cartImage from '../data/images/cart.png'
 
-const Header = () => {
+const Header = cart => {
+  const [data, setData] = useState(cart.cart)
   const [clicked, setCliked] = useState(false)
   const handleClick = () => setCliked(!clicked)
-
+  useEffect(() => {
+    setData(cart.cart)
+  }, [cart.cart])
   return (
     <header id='header'>
       <Link to='/' className='logo'>
@@ -17,7 +20,8 @@ const Header = () => {
       </Link>
       <div className='icon'>
         <Link to='/cart'>
-          <img src={cart} />
+          <img src={cartImage} />
+          {data.length > 0 ? <p className='length'>{data.length}</p> : null}
         </Link>
         <Burger clicked={clicked} handleClick={handleClick} />
       </div>

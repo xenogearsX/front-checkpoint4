@@ -42,6 +42,7 @@ const Bags = cart => {
                         )[0],
                         quantity: 1
                       })
+                      cart.setTrigger(!cart.trigger)
                       cart.setCart(tempCart)
                     } else {
                       tempCart[
@@ -49,6 +50,7 @@ const Bags = cart => {
                           item => item.idproduct === bag.idproduct
                         )
                       ].quantity += 1
+                      cart.setTrigger(!cart.trigger)
                       cart.setCart(tempCart)
                     }
                   }}
@@ -85,6 +87,7 @@ const Bags = cart => {
                           )[0],
                           quantity: 1
                         })
+                        cart.setTrigger(!cart.trigger)
                         cart.setCart(tempCart)
                       } else {
                         tempCart[
@@ -92,6 +95,7 @@ const Bags = cart => {
                             item => item.idproduct === bag.idproduct
                           )
                         ].quantity += 1
+                        cart.setTrigger(!cart.trigger)
                         cart.setCart(tempCart)
                       }
                     }}
