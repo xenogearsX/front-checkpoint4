@@ -51,6 +51,21 @@ const CartItem = item => {
         {product.quantity > product.stock ? 'Indisponible' : 'Disponible'}
       </td>
       <td className='price'>{quantity * product.price}</td>
+      <td
+        className='quantityOperation'
+        onClick={() => {
+          tempCart.splice(
+            tempCart.findIndex(
+              product => product.idproduct === item.item.idproduct
+            ),
+            1
+          )
+          item.setCart(tempCart)
+          item.setTrigger(!item.trigger)
+        }}
+      >
+        ❌
+      </td>
     </tr>
   )
 }

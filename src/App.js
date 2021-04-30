@@ -20,7 +20,6 @@ const App = () => {
     cartItems.forEach(
       item => (totalTemp = totalTemp + item.price * item.quantity)
     )
-    console.log(totalTemp)
     setTotal(totalTemp)
   }, [trigger])
   return (

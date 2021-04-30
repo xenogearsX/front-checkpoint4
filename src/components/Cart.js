@@ -17,6 +17,7 @@ const Cart = cart => {
               <th>Ajouter</th>
               <th>Disponibilité</th>
               <th>Prix</th>
+              <th>Suppr.</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +34,7 @@ const Cart = cart => {
             <tr>
               <td colSpan='6'>total</td>
               <td>{cart.total}</td>
+              <td></td>
             </tr>
           </tbody>
         </table>
