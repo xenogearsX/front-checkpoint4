@@ -5,7 +5,7 @@ import './Cart.css'
 const Cart = cart => {
   return (
     <div className='cart'>
-      <h2>Products in your cart</h2>
+      <h2>Votre panier</h2>
       {cart.cartItems.length !== 0 ? (
         <table>
           <thead>
@@ -32,7 +32,7 @@ const Cart = cart => {
               />
             ))}
             <tr>
-              <td colSpan='6'>total</td>
+              <td colSpan='6'>Total</td>
               <td>{cart.total}</td>
               <td></td>
             </tr>
