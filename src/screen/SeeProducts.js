@@ -6,6 +6,8 @@ import modifier from '../data/images/Modifier.png'
 
 const SeeProducts = () => {
   const [product, setProduct] = useState([])
+  const [message, setMessage] = useState('')
+  const [trigger, setTrigger] = useState(1)
   useEffect(() => {
     axios
       .get('http://localhost:3030/products')
@@ -13,7 +15,7 @@ const SeeProducts = () => {
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
-  }, [])
+  }, [trigger])
   return (
     <div className='table'>
       <h1>Produits dans la BDD</h1>
@@ -30,6 +32,7 @@ const SeeProducts = () => {
             <th>Url image grand format</th>
             <th>Id type produit</th>
             <th>Modfier</th>
+            <th>Suppr.</th>
           </tr>
         </thead>
         <tbody>
@@ -57,10 +60,27 @@ const SeeProducts = () => {
                   <img src={modifier}></img>
                 </Link>
               </td>
+              <td
+                className='pointer'
+                onClick={() => {
+                  axios
+                    .delete(`http://localhost:3030/products/${d.idproduct}`)
+                    .then(res => {
+                      setMessage(res.data)
+                      setTrigger(!trigger)
+                    })
+                    .catch(e => {
+                      setMessage(`Erreur lors de la suppression : ${e.message}`)
+                    })
+                }}
+              >
+                ❌
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <p>{message}</p>
     </div>
   )
 }

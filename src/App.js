@@ -39,7 +39,12 @@ const App = () => {
             />
           )}
         />
-        <Route path='/admin' component={NavAdmin} />
+        <Route
+          path='/admin'
+          render={props => (
+            <NavAdmin {...props} setTrigger={setTrigger} trigger={trigger} />
+          )}
+        />
         <Route
           path='/bags'
           render={props => (

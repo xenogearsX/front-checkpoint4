@@ -65,11 +65,21 @@
   margin: 0;
   width: 100%;
 }
+.pointer{
+  cursor: pointer;
+}
+.table{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 .table a{
   color: rgb(241, 113, 113);
 }
 .table td, .table th{
   border: 1px solid black;
+  font-family: 'black_jackregular';
+  padding: 0.5rem;
   vertical-align: middle;
 }
 .table th{

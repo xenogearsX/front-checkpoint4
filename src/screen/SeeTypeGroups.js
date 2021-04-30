@@ -6,6 +6,8 @@ import modifier from '../data/images/Modifier.png'
 
 const SeeTypeGroups = () => {
   const [typegroups, setTypeGroups] = useState([])
+  const [message, setMessage] = useState('')
+  const [trigger, setTrigger] = useState(1)
   useEffect(() => {
     axios
       .get('http://localhost:3030/typegroups')
@@ -13,7 +15,7 @@ const SeeTypeGroups = () => {
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
-  }, [])
+  }, [trigger])
   return (
     <div className='table'>
       <h1>Groupes produits dans la BDD</h1>
@@ -23,6 +25,7 @@ const SeeTypeGroups = () => {
             <th>Id</th>
             <th>Nom groupe produit</th>
             <th>Modifier</th>
+            <th>Suppr.</th>
           </tr>
         </thead>
         <tbody>
@@ -35,10 +38,27 @@ const SeeTypeGroups = () => {
                   <img src={modifier}></img>
                 </Link>
               </td>
+              <td
+                className='pointer'
+                onClick={() => {
+                  axios
+                    .delete(`http://localhost:3030/typegroups/${d.idtypegroup}`)
+                    .then(res => {
+                      setMessage(res.data)
+                      setTrigger(!trigger)
+                    })
+                    .catch(e => {
+                      setMessage(`Erreur lors de la suppression : ${e.message}`)
+                    })
+                }}
+              >
+                ❌
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <p>{message}</p>
     </div>
   )
 }
