@@ -41,31 +41,33 @@ const Cart = () => {
       )}
       <button
         onClick={() =>
-          axios
-            .post('http://localhost:3030/email', {
-              orderitems: JSON.stringify(
-                cart[0].map(element => {
-                  const {
-                    shortdescription,
-                    longdescription,
-                    smallurl,
-                    bigurl,
-                    type_idtype,
-                    idtype,
-                    typename,
-                    typegroup_idtypegroup,
-                    ...item
-                  } = element
-                  return item
+          cart[0].length === 0
+            ? setMessage('Commande impossible, panier vide')
+            : axios
+                .post('http://localhost:3030/order', {
+                  orderitems: JSON.stringify(
+                    cart[0].map(element => {
+                      const {
+                        shortdescription,
+                        longdescription,
+                        smallurl,
+                        bigurl,
+                        type_idtype,
+                        idtype,
+                        typename,
+                        typegroup_idtypegroup,
+                        ...item
+                      } = element
+                      return item
+                    })
+                  )
                 })
-              )
-            })
-            .then(res => {
-              setMessage(res.data)
-            })
-            .catch(e => {
-              setMessage(`Erreur lors de la création : ${e.message}`)
-            })
+                .then(res => {
+                  setMessage(res.data)
+                })
+                .catch(e => {
+                  setMessage(`Erreur lors de la création : ${e.message}`)
+                })
         }
       >
         Commander
