@@ -27,90 +27,17 @@ const App = () => {
   return (
     <div className='App'>
       <UserContext.Provider
-        value={[cartItems, setCartItems, trigger, setTrigger, total, setTotal]}
+        value={[cartItems, setCartItems, trigger, setTrigger, total]}
       >
         <Header />
         <Switch>
-          <Route
-            exact
-            path='/'
-            render={props => (
-              <Home
-                {...props}
-                setCart={setCartItems}
-                cartItems={cartItems}
-                setTrigger={setTrigger}
-                trigger={trigger}
-              />
-            )}
-          />
-          <Route
-            path='/admin'
-            render={props => (
-              <NavAdmin {...props} setTrigger={setTrigger} trigger={trigger} />
-            )}
-          />
-          <Route
-            path='/bags'
-            render={props => (
-              <Bags
-                {...props}
-                setCart={setCartItems}
-                cartItems={cartItems}
-                setTrigger={setTrigger}
-                trigger={trigger}
-              />
-            )}
-          />
-          <Route
-            path='/cart'
-            render={props => (
-              <Cart
-                {...props}
-                setCart={setCartItems}
-                cartItems={cartItems}
-                total={total}
-                setTrigger={setTrigger}
-                trigger={trigger}
-              />
-            )}
-          />
-          <Route
-            path='/clothes'
-            render={props => (
-              <Clothes
-                {...props}
-                setCart={setCartItems}
-                cartItems={cartItems}
-                setTrigger={setTrigger}
-                trigger={trigger}
-              />
-            )}
-          />
-          <Route
-            path='/details/:id'
-            render={props => (
-              <Details
-                {...props}
-                setCart={setCartItems}
-                cartItems={cartItems}
-                setTrigger={setTrigger}
-                trigger={trigger}
-              />
-            )}
-          />
-          <Route
-            path='/jewels'
-            render={props => (
-              <Jewels
-                {...props}
-                setCart={setCartItems}
-                cartItems={cartItems}
-                setTrigger={setTrigger}
-                trigger={trigger}
-              />
-            )}
-          />
+          <Route exact path='/' component={Home} />
+          <Route path='/admin' component={NavAdmin} />
+          <Route path='/bags' component={Bags} />
+          <Route path='/cart' component={Cart} />
+          <Route path='/clothes' component={Clothes} />
+          <Route path='/details/:id' component={Details} />
+          <Route path='/jewels' component={Jewels} />
         </Switch>
       </UserContext.Provider>
     </div>

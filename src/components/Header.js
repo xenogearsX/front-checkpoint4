@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react'
-import Burger from './Burger'
 import { Link } from 'react-router-dom'
+import Burger from './Burger'
+import UserContext from '../context/UserContext'
 
 import './Header.css'
 
 import cartImage from '../data/images/cart.png'
-import UserContext from '../context/UserContext'
 
 const Header = () => {
   const data = useContext(UserContext)

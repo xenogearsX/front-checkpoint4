@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Select from '../components/Select'
+import UserContext from '../context/UserContext'
 
-const Clothes = cart => {
+const Clothes = () => {
   const [clothes, setClothes] = useState([])
   const [filter, setFilter] = useState('all')
-
+  const cart = useContext(UserContext)
   useEffect(() => {
     axios
       .get('http://localhost:3030/products/filter/clothes')
@@ -36,7 +37,7 @@ const Clothes = cart => {
                 </Link>
                 <button
                   onClick={() => {
-                    const tempCart = cart.cartItems
+                    const tempCart = cart[0]
                     if (
                       !tempCart.some(
                         item => item.idproduct === clothe.idproduct
@@ -48,16 +49,16 @@ const Clothes = cart => {
                         )[0],
                         quantity: 1
                       })
-                      cart.setTrigger(!cart.trigger)
-                      cart.setCart(tempCart)
+                      cart[3](!cart[2])
+                      cart[1](tempCart)
                     } else {
                       tempCart[
                         tempCart.findIndex(
                           item => item.idproduct === clothe.idproduct
                         )
                       ].quantity += 1
-                      cart.setTrigger(!cart.trigger)
-                      cart.setCart(tempCart)
+                      cart[3](!cart[2])
+                      cart[1](tempCart)
                     }
                   }}
                 >
@@ -83,7 +84,7 @@ const Clothes = cart => {
                   </Link>
                   <button
                     onClick={() => {
-                      const tempCart = cart.cartItems
+                      const tempCart = cart[0]
                       if (
                         !tempCart.some(
                           item => item.idproduct === clothe.idproduct
@@ -95,16 +96,16 @@ const Clothes = cart => {
                           )[0],
                           quantity: 1
                         })
-                        cart.setTrigger(!cart.trigger)
-                        cart.setCart(tempCart)
+                        cart[3](!cart[2])
+                        cart[1](tempCart)
                       } else {
                         tempCart[
                           tempCart.findIndex(
                             item => item.idproduct === clothe.idproduct
                           )
                         ].quantity += 1
-                        cart.setTrigger(!cart.trigger)
-                        cart.setCart(tempCart)
+                        cart[3](!cart[2])
+                        cart[1](tempCart)
                       }
                     }}
                   >

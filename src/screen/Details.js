@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
 import './Details.css'
 
 import arrow from '../data/images/arrow.png'
 import { Link } from 'react-router-dom'
+import UserContext from '../context/UserContext'
 
 const Details = id => {
   const [product, setProduct] = useState({})
+  const cart = useContext(UserContext)
   useEffect(() => {
     axios
       .get(`http://localhost:3030/products/${id.match.params.id}`)
@@ -32,20 +34,20 @@ const Details = id => {
       <p>Stock: {product.stock}</p>
       <button
         onClick={() => {
-          const tempCart = id.cartItems
+          const tempCart = cart[0]
           if (!tempCart.some(item => item.idproduct === product.idproduct)) {
             tempCart.push({
               ...product,
               quantity: 1
             })
-            id.setTrigger(!id.trigger)
-            id.setCart(tempCart)
+            cart[3](!cart[2])
+            cart[1](tempCart)
           } else {
             tempCart[
               tempCart.findIndex(item => item.idproduct === product.idproduct)
             ].quantity += 1
-            id.setTrigger(!id.trigger)
-            id.setCart(tempCart)
+            cart[3](!cart[2])
+            cart[1](tempCart)
           }
         }}
       >

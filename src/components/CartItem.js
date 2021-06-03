@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import UserContext from '../context/UserContext'
 
 const CartItem = item => {
   const product = item.item
-  const cart = item.cart
+  const context = useContext(UserContext)
+  const cart = context[0]
   const [quantity, setQuantity] = useState(item.item.quantity)
   const tempCart = cart
   return (
@@ -17,7 +19,7 @@ const CartItem = item => {
       <td
         className='quantityOperation'
         onClick={() => {
-          item.setTrigger(!item.trigger)
+          context[3](!context[2])
           if (quantity > 0) {
             setQuantity(quantity - 1)
             tempCart[
@@ -25,7 +27,7 @@ const CartItem = item => {
                 product => product.idproduct === item.item.idproduct
               )
             ].quantity -= 1
-            item.setCart(tempCart)
+            context[1](tempCart)
           }
         }}
       >
@@ -41,8 +43,8 @@ const CartItem = item => {
               product => product.idproduct === item.item.idproduct
             )
           ].quantity += 1
-          item.setCart(tempCart)
-          item.setTrigger(!item.trigger)
+          context[1](tempCart)
+          context[3](!context[2])
         }}
       >
         +
@@ -60,8 +62,8 @@ const CartItem = item => {
             ),
             1
           )
-          item.setCart(tempCart)
-          item.setTrigger(!item.trigger)
+          context[1](tempCart)
+          context[3](!context[2])
         }}
       >
         ❌

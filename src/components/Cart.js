@@ -1,12 +1,17 @@
 import CartItem from './CartItem'
 
 import './Cart.css'
+import { useContext, useState } from 'react'
+import axios from 'axios'
+import UserContext from '../context/UserContext'
 
-const Cart = cart => {
+const Cart = () => {
+  const [message, setMessage] = useState(null)
+  const cart = useContext(UserContext)
   return (
     <div className='cart'>
       <h2>Votre panier</h2>
-      {cart.cartItems.length !== 0 ? (
+      {cart[0].length !== 0 ? (
         <table>
           <thead>
             <tr>
@@ -21,19 +26,12 @@ const Cart = cart => {
             </tr>
           </thead>
           <tbody>
-            {cart.cartItems.map(item => (
-              <CartItem
-                item={item}
-                cart={cart.cartItems}
-                setCart={cart.setCart}
-                key={item.idproduct}
-                setTrigger={cart.setTrigger}
-                trigger={cart.trigger}
-              />
+            {cart[0].map(item => (
+              <CartItem item={item} key={item.idproduct} />
             ))}
             <tr>
               <td colSpan='6'>Total</td>
-              <td>{cart.total}</td>
+              <td>{cart[4]}</td>
               <td></td>
             </tr>
           </tbody>
@@ -41,6 +39,38 @@ const Cart = cart => {
       ) : (
         <p>Aucun produit dans votre panier</p>
       )}
+      <button
+        onClick={() =>
+          axios
+            .post('http://localhost:3030/email', {
+              orderitems: JSON.stringify(
+                cart[0].map(element => {
+                  const {
+                    shortdescription,
+                    longdescription,
+                    smallurl,
+                    bigurl,
+                    type_idtype,
+                    idtype,
+                    typename,
+                    typegroup_idtypegroup,
+                    ...item
+                  } = element
+                  return item
+                })
+              )
+            })
+            .then(res => {
+              setMessage(res.data)
+            })
+            .catch(e => {
+              setMessage(`Erreur lors de la création : ${e.message}`)
+            })
+        }
+      >
+        Commander
+      </button>
+      {message ? <p>{message}</p> : null}
     </div>
   )
 }
