@@ -11,9 +11,9 @@ const SignIn = () => {
       : e.target.mail.value === ''
       ? setMessage('Veuillez saisir votre email.')
       : axios
-          .post('http://localhost:3300/account/signin', {
-            password: e.target.password.value,
-            mail: e.target.mail.value
+          .post('http://localhost:3030/account/signin', {
+            email: e.target.mail.value,
+            password: e.target.password.value
           })
           .then(res => {
             if (res.data === 'failed') {

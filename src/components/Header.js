@@ -27,7 +27,7 @@ const Header = () => {
         {data[5] === null ? (
           <div className='sign'>
             <Link to='/signin'>Identification</Link>
-            <Link to='/signup'>Enregistration</Link>
+            <Link to='/signup'>Enregistrement</Link>
           </div>
         ) : null}
         <Burger clicked={clicked} handleClick={handleClick} />

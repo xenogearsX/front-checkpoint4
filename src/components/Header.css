@@ -61,3 +61,11 @@
 #menuBurger{
   margin-right: 2rem;
 }
+.sign{
+  display: flex;
+}
+.sign a{
+  color: rgb(241, 113, 113);
+  text-decoration: none;
+  width: auto;
+}
