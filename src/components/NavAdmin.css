@@ -4,7 +4,7 @@
   justify-content: center;
   width: 100%;
 }
-.adminForm h1{
+.adminForm h1, .formTitle{
   color: rgb(241, 113, 113);
   font-family: 'black_jackregular';
   font-weight: bold;

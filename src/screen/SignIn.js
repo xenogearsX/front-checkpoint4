@@ -16,7 +16,7 @@ const SignIn = () => {
             password: e.target.password.value
           })
           .then(res => {
-            if (res.data === 'failed') {
+            if (res.data === 'Failed') {
               setMessage('Email ou mot de passe incorrect.')
             } else {
               setMessage('Identification réussi')
