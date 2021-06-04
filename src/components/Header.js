@@ -24,6 +24,12 @@ const Header = () => {
             <p className='length'>{data[0].length}</p>
           ) : null}
         </Link>
+        {data[5] === null ? (
+          <div className='sign'>
+            <Link to='/signin'>Identification</Link>
+            <Link to='/signup'>Enregistration</Link>
+          </div>
+        ) : null}
         <Burger clicked={clicked} handleClick={handleClick} />
       </div>
     </header>

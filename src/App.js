@@ -9,11 +9,14 @@ import Header from './components/Header'
 import Home from './screen/Home'
 import Jewels from './screen/Jewels'
 import NavAdmin from './components/NavAdmin'
-
-import './App.css'
+import SignIn from './screen/SignIn'
+import SignUp from './screen/SignUp'
 import UserContext from './context/UserContext'
 
+import './App.css'
+
 const App = () => {
+  const [account, setAccount] = useState(null)
   const [cartItems, setCartItems] = useState([])
   const [trigger, setTrigger] = useState(1)
   const [total, setTotal] = useState(0)
@@ -27,7 +30,15 @@ const App = () => {
   return (
     <div className='App'>
       <UserContext.Provider
-        value={[cartItems, setCartItems, trigger, setTrigger, total]}
+        value={[
+          cartItems,
+          setCartItems,
+          trigger,
+          setTrigger,
+          total,
+          account,
+          setAccount
+        ]}
       >
         <Header />
         <Switch>
@@ -38,6 +49,8 @@ const App = () => {
           <Route path='/clothes' component={Clothes} />
           <Route path='/details/:id' component={Details} />
           <Route path='/jewels' component={Jewels} />
+          <Route path='/signin' component={SignIn} />
+          <Route path='/signup' component={SignUp} />
         </Switch>
       </UserContext.Provider>
     </div>
