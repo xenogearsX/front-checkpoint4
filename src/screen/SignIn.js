@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react'
 import axios from 'axios'
 import UserContext from '../context/UserContext'
+import { useHistory } from 'react-router'
 
-const SignIn = () => {
+const SignIn = origin => {
   const [message, setMessage] = useState(null)
 
   const account = useContext(UserContext)[6]
+  const history = useHistory()
 
   const onSubmit = e => {
     e.preventDefault()
@@ -26,6 +28,9 @@ const SignIn = () => {
               account(res.data.idaccount)
               setMessage('Identification réussi')
               localStorage.setItem('token', res.headers['x-access-token'])
+              origin.location.origin
+                ? history.push(origin.location.origin)
+                : null
             }
           })
   }
