@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')

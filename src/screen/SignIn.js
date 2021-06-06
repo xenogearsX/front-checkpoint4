@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
 const SignIn = () => {
   const [message, setMessage] = useState(null)
@@ -16,7 +16,7 @@ const SignIn = () => {
             password: e.target.password.value
           })
           .then(res => {
-            if (res.data === 'Failed') {
+            if (res.data === 'failed') {
               setMessage('Email ou mot de passe incorrect.')
             } else {
               setMessage('Identification réussi')
