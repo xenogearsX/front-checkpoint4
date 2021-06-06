@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import axios from 'axios'
+import UserContext from '../context/UserContext'
 
 const SignIn = () => {
   const [message, setMessage] = useState(null)
+
+  const account = useContext(UserContext)[6]
+
   const onSubmit = e => {
     e.preventDefault()
 
@@ -19,6 +23,7 @@ const SignIn = () => {
             if (res.data === 'failed') {
               setMessage('Email ou mot de passe incorrect.')
             } else {
+              account(res.data.idaccount)
               setMessage('Identification réussi')
               localStorage.setItem('token', res.headers['x-access-token'])
             }
