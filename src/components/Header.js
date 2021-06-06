@@ -43,9 +43,14 @@ const Header = () => {
             <Link to='/signup'>Enregistrement</Link>
           </div>
         ) : (
-          <div className='logout' onClick={logOut}>
-            Logout
-          </div>
+          <>
+            <div className='sign'>
+              <Link to='/account'>Votre compte</Link>
+            </div>
+            <div className='logout' onClick={logOut}>
+              Logout
+            </div>
+          </>
         )}
         <Burger clicked={clicked} handleClick={handleClick} />
       </div>
