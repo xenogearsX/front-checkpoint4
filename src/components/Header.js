@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Burger from './Burger'
 import UserContext from '../context/UserContext'
 
@@ -26,7 +26,14 @@ const Header = () => {
         </Link>
         {data[5] === null ? (
           <div className='sign'>
-            <Link to='/signin'>Identification</Link>
+            <Link
+              to={{
+                pathname: '/signin',
+                origin: useHistory().location.pathname
+              }}
+            >
+              Identification
+            </Link>
             <Link to='/signup'>Enregistrement</Link>
           </div>
         ) : null}
