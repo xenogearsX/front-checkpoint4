@@ -10,7 +10,13 @@ import cartImage from '../data/images/cart.png'
 const Header = () => {
   const data = useContext(UserContext)
   const [clicked, setCliked] = useState(false)
+
+  const account = useContext(UserContext)[6]
   const handleClick = () => setCliked(!clicked)
+  const logOut = () => {
+    account(null)
+    localStorage.removeItem('token')
+  }
 
   return (
     <header id='header'>
@@ -36,7 +42,11 @@ const Header = () => {
             </Link>
             <Link to='/signup'>Enregistrement</Link>
           </div>
-        ) : null}
+        ) : (
+          <div className='logout' onClick={logOut}>
+            Logout
+          </div>
+        )}
         <Burger clicked={clicked} handleClick={handleClick} />
       </div>
     </header>
