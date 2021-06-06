@@ -6,7 +6,7 @@ import { useHistory } from 'react-router'
 const SignIn = origin => {
   const [message, setMessage] = useState(null)
 
-  const account = useContext(UserContext)[6]
+  const account = useContext(UserContext)
   const history = useHistory()
 
   const onSubmit = e => {
@@ -25,12 +25,11 @@ const SignIn = origin => {
             if (res.data === 'failed') {
               setMessage('Email ou mot de passe incorrect.')
             } else {
-              account(res.data.idaccount)
+              account[6](res.data.idAccount)
+              account[8](res.data.isAdmin)
               setMessage('Identification réussi')
               localStorage.setItem('token', res.headers['x-access-token'])
-              origin.location.origin
-                ? history.push(origin.location.origin)
-                : null
+              origin.location ? history.push(origin.location.origin) : null
             }
           })
   }
