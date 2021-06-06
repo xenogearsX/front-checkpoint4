@@ -1,8 +1,11 @@
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import UserContext from '../context/UserContext'
 
 import './Nav.css'
 
 const Nav = header => {
+  const admin = useContext(UserContext)[7]
   return (
     <nav id='menu'>
       <ul className='nav'>
@@ -36,6 +39,18 @@ const Nav = header => {
             Prêt-à-porter
           </NavLink>
         </li>
+        {admin ? (
+          <li>
+            <NavLink
+              to='/admin'
+              className='link'
+              activeClassName='selected'
+              onClick={() => header.handleClick()}
+            >
+              Administration
+            </NavLink>
+          </li>
+        ) : null}
       </ul>
     </nav>
   )
