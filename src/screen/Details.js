@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+
 import UserContext from '../context/UserContext'
 
 import './Details.css'
@@ -19,11 +20,12 @@ const Details = id => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
   }, [])
+
   return (
     <div className='details'>
       <img src={product.bigurl} alt={product.name} className='image' />
       <div className='detailsTitle'>
-        <Link to={`/${id.location.props}`}>
+        <Link to={`/${id.location.origin}`}>
           <img src={arrow} alt='arrow' className='arrow' />
         </Link>
         <h1>{product.name}</h1>
