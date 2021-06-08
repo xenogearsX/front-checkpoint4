@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import Select from '../components/Select'
-import UserContext from '../context/UserContext'
+
+import ProductsCards from '../components/ProductsCards'
 
 const Bags = () => {
-  const [filter, setFilter] = useState('all')
   const [bags, setBags] = useState([])
-  const cart = useContext(UserContext)
   useEffect(() => {
     axios
       .get('http://localhost:3030/products/filter/bags')
@@ -16,99 +14,7 @@ const Bags = () => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
   }, [])
-  return (
-    <div className='globalCard'>
-      <Select props={bags} filter={setFilter} />
-      <div className='cards'>
-        {filter === 'all'
-          ? bags.map(bag => (
-              <div className='card' key={bag.idproduct}>
-                <Link
-                  to={{ pathname: `/details/${bag.idproduct}`, props: 'bags' }}
-                >
-                  <img src={bag.smallurl} alt={bag.name} />
-                  <p>{bag.name}</p>
-                  <p>{bag.shortdescription}</p>
-                  <p>Prix: {bag.price} €</p>
-                  <p>Stock: {bag.stock}</p>
-                </Link>
-                <button
-                  onClick={() => {
-                    const tempCart = cart[0]
-                    if (
-                      !tempCart.some(item => item.idproduct === bag.idproduct)
-                    ) {
-                      tempCart.push({
-                        ...bags.filter(
-                          item => item.idproduct === bag.idproduct
-                        )[0],
-                        quantity: 1
-                      })
-                      cart[3](!cart[2])
-                      cart[1](tempCart)
-                    } else {
-                      tempCart[
-                        tempCart.findIndex(
-                          item => item.idproduct === bag.idproduct
-                        )
-                      ].quantity += 1
-                      cart[3](!cart[2])
-                      cart[1](tempCart)
-                    }
-                  }}
-                >
-                  +
-                </button>
-              </div>
-            ))
-          : bags
-              .filter(bag => bag.typename === filter)
-              .map(bag => (
-                <div className='card' key={bag.idproduct}>
-                  <Link
-                    to={{
-                      pathname: `/details/${bag.idproduct}`,
-                      props: 'bags'
-                    }}
-                  >
-                    <img src={bag.smallurl} alt={bag.name} />
-                    <p>{bag.name}</p>
-                    <p>{bag.shortdescription}</p>
-                    <p>Prix: {bag.price} €</p>
-                    <p>Stock: {bag.stock}</p>
-                  </Link>
-                  <button
-                    onClick={() => {
-                      const tempCart = cart[0]
-                      if (
-                        !tempCart.some(item => item.idproduct === bag.idproduct)
-                      ) {
-                        tempCart.push({
-                          ...bags.filter(
-                            item => item.idproduct === bag.idproduct
-                          )[0],
-                          quantity: 1
-                        })
-                        cart[3](!cart[2])
-                        cart[1](tempCart)
-                      } else {
-                        tempCart[
-                          tempCart.findIndex(
-                            item => item.idproduct === bag.idproduct
-                          )
-                        ].quantity += 1
-                        cart[3](!cart[2])
-                        cart[1](tempCart)
-                      }
-                    }}
-                  >
-                    +
-                  </button>
-                </div>
-              ))}
-      </div>
-    </div>
-  )
+  return <ProductsCards products={bags} origin='bags' />
 }
 
 export default Bags
