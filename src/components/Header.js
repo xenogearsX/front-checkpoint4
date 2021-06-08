@@ -16,6 +16,7 @@ const Header = () => {
   const handleClick = () => setCliked(!clicked)
   const logOut = () => {
     data[6](null)
+    data[8](null)
     localStorage.removeItem('token')
   }
 
