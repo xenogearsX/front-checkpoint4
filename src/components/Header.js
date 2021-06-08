@@ -11,10 +11,9 @@ const Header = () => {
   const data = useContext(UserContext)
   const [clicked, setCliked] = useState(false)
 
-  const account = useContext(UserContext)[6]
   const handleClick = () => setCliked(!clicked)
   const logOut = () => {
-    account(null)
+    data[6](null)
     localStorage.removeItem('token')
   }
 
