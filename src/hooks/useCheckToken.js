@@ -1,6 +1,7 @@
-import { useContext, useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
+
 import axios from 'axios'
+
 import UserContext from '../context/UserContext'
 
 export const useCheckToken = () => {
