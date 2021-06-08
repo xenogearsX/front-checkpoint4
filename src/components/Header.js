@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+
 import Burger from './Burger'
+import Logo from './Logo'
 import UserContext from '../context/UserContext'
 
 import './Header.css'
@@ -19,9 +21,7 @@ const Header = () => {
 
   return (
     <header id='header'>
-      <Link to='/' className='logo'>
-        Bibelot.com
-      </Link>
+      <Logo />
       <div className='icon'>
         <Link to='/cart'>
           <img src={cartImage} />
