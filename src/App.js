@@ -1,5 +1,5 @@
-import { Route, Switch } from 'react-router'
 import { useEffect, useState } from 'react'
+import { Route, Switch } from 'react-router'
 
 import Account from './screen/Account'
 import Bags from './screen/Bags'
@@ -23,13 +23,17 @@ const App = () => {
   const [cartItems, setCartItems] = useState([])
   const [trigger, setTrigger] = useState(1)
   const [total, setTotal] = useState(0)
+
   useEffect(() => {
-    let totalTemp = 0
-    cartItems.forEach(
-      item => (totalTemp = totalTemp + item.price * item.quantity)
+    setTotal(
+      cartItems.reduce(
+        (accumulator, currentValue) =>
+          accumulator + currentValue.price * currentValue.quantity,
+        0
+      )
     )
-    setTotal(totalTemp)
   }, [trigger])
+
   return (
     <div className='App'>
       <UserContext.Provider
