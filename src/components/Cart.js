@@ -1,14 +1,16 @@
-import CartItem from './CartItem'
-
-import './Cart.css'
 import { useContext, useState } from 'react'
 import axios from 'axios'
-import UserContext from '../context/UserContext'
 import { Link } from 'react-router-dom'
+
+import CartItem from './CartItem'
+import UserContext from '../context/UserContext'
+
+import './Cart.css'
 
 const Cart = () => {
   const [message, setMessage] = useState(null)
   const cart = useContext(UserContext)
+
   return (
     <div className='cart'>
       <h2>Votre panier</h2>
