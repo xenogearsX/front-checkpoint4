@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+import { useProtected } from '../hooks/useProtected'
+
 const ModifTypeGroup = typegroup => {
+  useProtected()
+
   const [groupname, setGroupname] = useState('')
   const [message, setMessage] = useState(null)
   const allPost = {

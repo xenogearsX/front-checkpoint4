@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+import { useProtected } from '../hooks/useProtected'
+
 const AdminTypes = () => {
+  useProtected()
+
   const [idTypeGroup, setIdTypeGroup] = useState('')
   const [message, setMessage] = useState(null)
   const [typeName, setTypename] = useState('')

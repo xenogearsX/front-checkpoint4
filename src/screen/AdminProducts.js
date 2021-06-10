@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+import { useProtected } from '../hooks/useProtected'
+
 const AdminProducts = () => {
+  useProtected()
+
   const [bigUrl, setBigUrl] = useState('')
   const [longDes, setLongDes] = useState('')
   const [message, setMessage] = useState(null)

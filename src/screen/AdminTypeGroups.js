@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import axios from 'axios'
 
+import { useProtected } from '../hooks/useProtected'
+
 const AdminTypeGroups = () => {
+  useProtected()
+
   const [groupname, setGroupname] = useState('')
   const [message, setMessage] = useState(null)
   const allPost = {
