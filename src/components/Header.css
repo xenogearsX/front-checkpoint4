@@ -41,14 +41,17 @@
   height: 100%;
   width: 100%;
 }
-.icon p{
+.length{
   background: rgb(241, 113, 113);
   border-radius: 50%;
-  right:0;
-  bottom: 0;
-  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right:-5px;
+  bottom: -5px;
+  height: 1.3rem;
   position: absolute;
-  width: 1rem;
+  width: 1.3rem;
   z-index: 5;
 }
 .logo{

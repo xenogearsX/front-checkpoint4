@@ -27,7 +27,13 @@ const Header = () => {
         <Link to='/cart'>
           <img src={cartImage} />
           {data[0].length > 0 ? (
-            <p className='length'>{data[0].length}</p>
+            <p className='length'>
+              {data[0].reduce(
+                (accumulator, currentValue) =>
+                  accumulator + currentValue.quantity,
+                0
+              )}
+            </p>
           ) : null}
         </Link>
         {data[5] === null ? (
