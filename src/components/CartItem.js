@@ -8,6 +8,39 @@ const CartItem = item => {
   const cart = context[0]
   const [quantity, setQuantity] = useState(item.item.quantity)
   const tempCart = cart
+
+  const saveInContext = () => {
+    context[1](tempCart)
+    context[3](!context[2])
+  }
+
+  const findIndex = tempCart.findIndex(
+    product => product.idproduct === item.item.idproduct
+  )
+
+  const handleQuantity = e => {
+    let tempQuantity = quantity
+    e.target.innerHTML === '-'
+      ? tempQuantity > 0
+        ? (tempQuantity -= 1)
+        : null
+      : (tempQuantity += 1)
+    setQuantity(tempQuantity)
+    tempCart[findIndex].quantity = tempQuantity
+    saveInContext()
+  }
+
+  const handleChange = e => {
+    setQuantity(Number(e.target.value))
+    tempCart[findIndex].quantity = Number(e.target.value)
+    saveInContext()
+  }
+
+  const handleDelete = () => {
+    tempCart.splice(findIndex, 1)
+    saveInContext()
+  }
+
   return (
     <tr>
       <td>
@@ -16,56 +49,20 @@ const CartItem = item => {
         </Link>
       </td>
       <td>{product.name}</td>
-      <td
-        className='quantityOperation'
-        onClick={() => {
-          context[3](!context[2])
-          if (quantity > 0) {
-            setQuantity(quantity - 1)
-            tempCart[
-              tempCart.findIndex(
-                product => product.idproduct === item.item.idproduct
-              )
-            ].quantity -= 1
-            context[1](tempCart)
-          }
-        }}
-      >
+      <td className='quantityOperation' onClick={handleQuantity}>
         -
       </td>
-      <td>{quantity}</td>
-      <td
-        className='quantityOperation'
-        onClick={() => {
-          setQuantity(quantity + 1)
-          tempCart[
-            tempCart.findIndex(
-              product => product.idproduct === item.item.idproduct
-            )
-          ].quantity += 1
-          context[1](tempCart)
-          context[3](!context[2])
-        }}
-      >
+      <td>
+        <input type='number' value={quantity} onChange={handleChange} min='0' />
+      </td>
+      <td className='quantityOperation' onClick={handleQuantity}>
         +
       </td>
       <td>
         {product.quantity > product.stock ? 'Indisponible' : 'Disponible'}
       </td>
       <td className='price'>{quantity * product.price}</td>
-      <td
-        className='quantityOperation'
-        onClick={() => {
-          tempCart.splice(
-            tempCart.findIndex(
-              product => product.idproduct === item.item.idproduct
-            ),
-            1
-          )
-          context[1](tempCart)
-          context[3](!context[2])
-        }}
-      >
+      <td className='quantityOperation' onClick={handleDelete}>
         ❌
       </td>
     </tr>
