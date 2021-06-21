@@ -81,7 +81,7 @@ const SignIn = origin => {
               value={password}
             />
             <button
-              className='showPassword'
+              className={showPassword ? 'showPassword' : 'showPassword cross'}
               onClick={() => setShowPassword(!showPassword)}
             >
               👁️

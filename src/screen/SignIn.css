@@ -2,6 +2,9 @@
   border: rgb(241, 113, 113) 1px solid ;
   width: 90%;
 }
+.cross {
+  background-color: rgb(241, 113, 113);
+}
 .formData span, .required span {
   color: rgb(241, 113, 113);
 }
