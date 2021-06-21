@@ -1,3 +1,5 @@
+import './Select.css'
+
 const Select = option => {
   const handleChange = e => option.filter(e.target.value)
   return (
