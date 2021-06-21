@@ -1,3 +1,7 @@
+.add {
+  border: rgb(241, 113, 113) 1px solid;
+  margin: 1rem;
+}
 .card{
   font-family: "black_jackregular";
   padding: 20px;

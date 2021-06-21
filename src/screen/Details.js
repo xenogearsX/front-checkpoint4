@@ -31,10 +31,11 @@ const Details = id => {
         <h1>{product.name}</h1>
         <p className='right'></p>
       </div>
-      <p>{product.longdescription}</p>
+      <p className='description'>{product.longdescription}</p>
       <p>Prix: {product.price} €</p>
       <p>Stock: {product.stock}</p>
       <button
+        className='add'
         onClick={() => {
           const tempCart = cart[0]
           if (!tempCart.some(item => item.idproduct === product.idproduct)) {
@@ -53,7 +54,7 @@ const Details = id => {
           }
         }}
       >
-        +
+        Ajouter au panier
       </button>
     </div>
   )

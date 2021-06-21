@@ -30,6 +30,7 @@ const ProductsCards = products => {
                 <p>Stock: {product.stock}</p>
               </Link>
               <button
+                className='add'
                 onClick={() => {
                   const tempCart = cart[0]
                   if (
@@ -54,7 +55,7 @@ const ProductsCards = products => {
                   }
                 }}
               >
-                +
+                Ajouter au panier
               </button>
             </div>
           ))}
