@@ -18,18 +18,6 @@ const CartItem = item => {
     product => product.idproduct === item.item.idproduct
   )
 
-  const handleQuantity = e => {
-    let tempQuantity = quantity
-    e.target.innerHTML === '-'
-      ? tempQuantity > 0
-        ? (tempQuantity -= 1)
-        : null
-      : (tempQuantity += 1)
-    setQuantity(tempQuantity)
-    tempCart[findIndex].quantity = tempQuantity
-    saveInContext()
-  }
-
   const handleChange = e => {
     setQuantity(Number(e.target.value))
     tempCart[findIndex].quantity = Number(e.target.value)
@@ -49,14 +37,8 @@ const CartItem = item => {
         </Link>
       </td>
       <td>{product.name}</td>
-      <td className='quantityOperation' onClick={handleQuantity}>
-        -
-      </td>
       <td>
         <input type='number' value={quantity} onChange={handleChange} min='0' />
-      </td>
-      <td className='quantityOperation' onClick={handleQuantity}>
-        +
       </td>
       <td>
         {product.quantity > product.stock ? 'Indisponible' : 'Disponible'}

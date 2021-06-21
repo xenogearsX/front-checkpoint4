@@ -20,9 +20,7 @@ const Cart = () => {
             <tr>
               <th></th>
               <th>Produit</th>
-              <th>Retirer</th>
               <th>Quantité</th>
-              <th>Ajouter</th>
               <th>Disponibilité</th>
               <th>Prix</th>
               <th>Suppr.</th>
@@ -33,9 +31,8 @@ const Cart = () => {
               <CartItem item={item} key={item.idproduct} />
             ))}
             <tr>
-              <td colSpan='6'>Total</td>
-              <td>{cart[4]}</td>
-              <td></td>
+              <td colSpan='4'>Total</td>
+              <td colSpan='2'>{cart[4]}</td>
             </tr>
           </tbody>
         </table>
@@ -49,23 +46,22 @@ const Cart = () => {
               ? setMessage('Commande impossible, panier vide')
               : axios
                   .post('http://localhost:3030/order', {
-                    orderitems: JSON.stringify(
-                      cart[0].map(element => {
-                        const {
-                          shortdescription,
-                          longdescription,
-                          smallurl,
-                          bigurl,
-                          type_idtype,
-                          idtype,
-                          typename,
-                          typegroup_idtypegroup,
-                          ...item
-                        } = element
-                        return item
-                      })
-                    ),
-                    account_idaccount: cart[5]
+                    orderitems: cart[0].map(element => {
+                      const {
+                        shortdescription,
+                        longdescription,
+                        smallurl,
+                        bigurl,
+                        type_idtype,
+                        idtype,
+                        typename,
+                        typegroup_idtypegroup,
+                        ...item
+                      } = element
+                      return item
+                    }),
+                    account_idaccount: cart[5],
+                    total: cart[4]
                   })
                   .then(res => {
                     setMessage(res.data)
