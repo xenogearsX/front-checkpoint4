@@ -24,7 +24,7 @@ const Header = () => {
     <header id='header'>
       <Logo />
       <div className='icon'>
-        <Link to='/cart'>
+        <Link to='/cart' className='cartImage'>
           <img src={cartImage} />
           {data[0].length > 0 ? (
             <p className='length'>
