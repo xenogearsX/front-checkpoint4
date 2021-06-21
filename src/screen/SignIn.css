@@ -1,0 +1,36 @@
+.connect {
+  border: rgb(241, 113, 113) 1px solid ;
+  width: 90%;
+}
+.formData span, .required span {
+  color: rgb(241, 113, 113);
+}
+legend {
+  margin-left: 1rem;
+}
+.password {
+  display: flex;
+  justify-content: center;
+}
+#password {
+  margin: 0;
+  width: 85%;
+}
+.passwordLegend{
+  margin-bottom: 1rem;
+}
+.required {
+  margin: 1rem;
+}
+.showPassword {
+  border-width: 1px 1px 1px 0;
+  border-color: rgb(241, 113, 113);
+  border-style: solid;
+  width: 5%;
+}
+
+@media (max-width: 500px){
+  .showPassword {
+    font-size: 0.6rem;
+  }
+}
