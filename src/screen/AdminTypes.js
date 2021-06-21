@@ -67,7 +67,7 @@ const AdminTypes = () => {
             />
           </fieldset>
           <fieldset className='formData'>
-            <legend htmlFor='compte'>
+            <legend htmlFor='typegroup'>
               Groupe produit<span> * </span>
             </legend>
             <select id='typegroup' name='typegroup' onChange={handleChange}>
