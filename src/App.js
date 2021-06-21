@@ -21,7 +21,7 @@ const App = () => {
   const [account, setAccount] = useState(null)
   const [admin, setAdmin] = useState(false)
   const [cartItems, setCartItems] = useState([])
-  const [trigger, setTrigger] = useState(1)
+  const [trigger, setTrigger] = useState(true)
   const [total, setTotal] = useState(0)
 
   useEffect(() => {
