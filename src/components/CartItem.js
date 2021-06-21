@@ -5,9 +5,8 @@ import UserContext from '../context/UserContext'
 const CartItem = item => {
   const product = item.item
   const context = useContext(UserContext)
-  const cart = context[0]
   const [quantity, setQuantity] = useState(item.item.quantity)
-  const tempCart = cart
+  const tempCart = context[0]
 
   const saveInContext = () => {
     context[1](tempCart)
