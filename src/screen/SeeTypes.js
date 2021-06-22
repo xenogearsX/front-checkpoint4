@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -29,7 +30,7 @@ const SeeTypes = () => {
             <th>Id</th>
             <th>Type produit</th>
             <th>Id groupe produit</th>
-            <th>Modfier</th>
+            <th>Modifier</th>
             <th>Suppr.</th>
           </tr>
         </thead>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -35,7 +36,7 @@ const SeeProducts = () => {
             <th>Url petite image</th>
             <th>Url image grand format</th>
             <th>Id type produit</th>
-            <th>Modfier</th>
+            <th>Modifier</th>
             <th>Suppr.</th>
           </tr>
         </thead>
