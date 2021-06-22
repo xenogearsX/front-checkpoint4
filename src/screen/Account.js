@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 
 import axios from 'axios'
-import { NavLink, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import { useProtected } from '../hooks/useProtected'
+import NavAccount from '../components/NavAccount'
 import Welcome from '../components/Welcome'
 
 const Account = () => {
@@ -22,32 +23,7 @@ const Account = () => {
 
   return (
     <div className='account'>
-      {isLoading ? (
-        <div>loading</div>
-      ) : (
-        <div className='accountNav'>
-          <ul>
-            <li>
-              <NavLink
-                to='/account/details'
-                className='link'
-                activeClassName='selected'
-              >
-                Données personnelles
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to='/account/orders'
-                className='link'
-                activeClassName='selected'
-              >
-                Commandes
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      )}
+      {isLoading ? <div>loading</div> : <NavAccount />}
       <Switch>
         <Route exact path='/account' component={Welcome} />
         {/* <Route path='/account/details' component={UserDetails} />
