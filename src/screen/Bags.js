@@ -8,7 +8,7 @@ const Bags = () => {
   const [bags, setBags] = useState([])
   useEffect(() => {
     axios
-      .get('http://localhost:3030/products/filter/bags')
+      .get('http://localhost:3030/products/filter/maroquinerie')
       .then(res => setBags(res.data))
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)

@@ -8,7 +8,7 @@ const Clothes = () => {
   const [clothes, setClothes] = useState([])
   useEffect(() => {
     axios
-      .get('http://localhost:3030/products/filter/clothes')
+      .get('http://localhost:3030/products/filter/Prêt-à-porter')
       .then(res => setClothes(res.data))
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)

@@ -8,7 +8,7 @@ const Jewels = () => {
   const [jewels, setJewels] = useState([])
   useEffect(() => {
     axios
-      .get('http://localhost:3030/products/filter/jewels')
+      .get('http://localhost:3030/products/filter/bijoux')
       .then(res => setJewels(res.data))
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)
