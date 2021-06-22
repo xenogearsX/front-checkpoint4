@@ -1,10 +1,13 @@
-import axios from 'axios'
 import { useContext, useEffect, useState } from 'react'
+
+import axios from 'axios'
+
 import UserContext from '../context/UserContext'
 
 const Welcome = () => {
-  const [user, setUser] = useState('')
   const account = useContext(UserContext)[5]
+  const [user, setUser] = useState('')
+
   useEffect(() => {
     axios
       .get(`http://localhost:3030/account/${account}`)
@@ -16,6 +19,7 @@ const Welcome = () => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
   }, [])
+
   return <div>Bienvenue dans votre compte {user}.</div>
 }
 

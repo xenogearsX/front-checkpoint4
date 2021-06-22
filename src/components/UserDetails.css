@@ -1,0 +1,18 @@
+.userDetails {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'black_jackregular';
+}
+.userDetails h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.userDetails td, .userDetails th{
+  border: 1px solid black;
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+.userDetails th{
+  background: rgb(241, 113, 113);
+}
