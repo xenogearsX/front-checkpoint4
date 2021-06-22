@@ -1,9 +1,11 @@
 import { useContext, useState } from 'react'
+
 import { Link } from 'react-router-dom'
+
 import Select from './Select'
+import UserContext from '../context/UserContext'
 
 import './ProductsCards.css'
-import UserContext from '../context/UserContext'
 
 const ProductsCards = products => {
   const [filter, setFilter] = useState('')
