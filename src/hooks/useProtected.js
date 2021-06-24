@@ -8,6 +8,10 @@ export const useProtected = () => {
   const [isLoading, setIsloading] = useState(true)
   let history = useHistory()
 
+  useEffect(() => {
+    protectedRoute()
+  }, [])
+
   const protectedRoute = () => {
     const token = localStorage.getItem('token')
     axios({
@@ -26,8 +30,5 @@ export const useProtected = () => {
       setIsloading(false)
     })
   }
-  useEffect(() => {
-    protectedRoute()
-  }, [])
   return [isLoading]
 }

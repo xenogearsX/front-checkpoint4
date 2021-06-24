@@ -7,6 +7,10 @@ import UserContext from '../context/UserContext'
 export const useCheckToken = () => {
   const account = useContext(UserContext)
 
+  useEffect(() => {
+    checkToken()
+  }, [])
+
   const checkToken = () => {
     const token = localStorage.getItem('token')
     axios({
@@ -22,8 +26,5 @@ export const useCheckToken = () => {
       }
     })
   }
-  useEffect(() => {
-    checkToken()
-  }, [])
   return
 }
