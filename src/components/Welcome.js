@@ -20,7 +20,7 @@ const Welcome = () => {
       })
   }, [])
 
-  return <div>Bienvenue dans votre compte {user}.</div>
+  return <div>Bonjour {user}.</div>
 }
 
 export default Welcome
