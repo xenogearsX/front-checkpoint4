@@ -4,12 +4,15 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import UserContext from '../context/UserContext'
+import { useProtected } from '../hooks/useProtected'
 
 import './UserDetails.css'
 
 import modifier from '../data/images/Modifier.png'
 
 const UserDetails = () => {
+  useProtected()
+
   const account = useContext(UserContext)[5]
   const [user, setUser] = useState([])
 
@@ -53,7 +56,7 @@ const UserDetails = () => {
             <td>{user.city}</td>
             <td>{user.country}</td>
             <td>
-              <Link to={`/account/modifaccount/${user.idaccount}`}>
+              <Link to={`/account/usermodif/${user.idaccount}`}>
                 <img src={modifier}></img>
               </Link>
             </td>
