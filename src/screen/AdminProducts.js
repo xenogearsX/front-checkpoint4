@@ -64,7 +64,11 @@ const AdminProducts = () => {
         setMessage(res.data + ' ' + name)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(
+          `Erreur lors de la création : ${
+            e.response ? e.response.data : e.message
+          }`
+        )
       })
   }
 
@@ -193,7 +197,7 @@ const AdminProducts = () => {
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input className='send' type='submit' value='Valider le produit' />
+            <input className='send' type='submit' value='Créer le produit' />
           </div>
         </div>
       </form>

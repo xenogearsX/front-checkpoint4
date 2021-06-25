@@ -22,7 +22,11 @@ const AdminTypeGroups = () => {
         setMessage(res.data + ' ' + groupname)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(
+          `Erreur lors de la création : ${
+            e.response ? e.response.data : e.message
+          }`
+        )
       })
   }
 
@@ -54,7 +58,7 @@ const AdminTypeGroups = () => {
             <input
               className='send'
               type='submit'
-              value='Valider le groupe produit'
+              value='Créer le groupe produit'
             />
           </div>
         </div>

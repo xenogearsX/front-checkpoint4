@@ -72,7 +72,11 @@ const ModifProduct = product => {
         setMessage('Modification réussie de ' + res.data.name)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(
+          `Erreur lors de la modification : ${
+            e.response ? e.response.data : e.message
+          }`
+        )
       })
   }
 
@@ -192,7 +196,7 @@ const ModifProduct = product => {
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input className='send' type='submit' value='Valider le produit' />
+            <input className='send' type='submit' value='Modifier le produit' />
           </div>
         </div>
       </form>

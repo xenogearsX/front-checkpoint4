@@ -40,7 +40,11 @@ const AdminTypes = () => {
         setMessage(res.data + ' ' + typeName)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(
+          `Erreur lors de la création : ${
+            e.response ? e.response.data : e.message
+          }`
+        )
       })
   }
 
@@ -60,7 +64,7 @@ const AdminTypes = () => {
               type='text'
               id='name'
               name='name'
-              placeholder='ex: bijoux'
+              placeholder='ex: collier'
               onChange={handleChange}
               required
               value={typeName}
@@ -88,7 +92,7 @@ const AdminTypes = () => {
             <input
               className='send'
               type='submit'
-              value='Valider le type produit'
+              value='Créer le type produit'
             />
           </div>
         </div>

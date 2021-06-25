@@ -34,7 +34,11 @@ const ModifTypeGroup = typegroup => {
         setMessage('Modification réussie de ' + res.data.groupname)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(
+          `Erreur lors de la modification : ${
+            e.response ? e.response.data : e.message
+          }`
+        )
       })
   }
 
@@ -65,7 +69,7 @@ const ModifTypeGroup = typegroup => {
             <input
               className='send'
               type='submit'
-              value='Valider le groupe de produit'
+              value='Modifier le groupe de produit'
             />
           </div>
         </div>

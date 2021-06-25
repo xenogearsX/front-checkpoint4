@@ -42,7 +42,11 @@ const ModifType = types => {
         setMessage('Modification réussie de ' + res.data.typename)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(
+          `Erreur lors de modification : ${
+            e.response ? e.response.data : e.message
+          }`
+        )
       })
   }
 
@@ -87,7 +91,7 @@ const ModifType = types => {
             <input
               className='send'
               type='submit'
-              value='Valider le type produit'
+              value='Modifier le type produit'
             />
           </div>
         </div>
