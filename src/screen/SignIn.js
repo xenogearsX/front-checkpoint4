@@ -38,7 +38,7 @@ const SignIn = origin => {
               account[8](res.data.isAdmin)
               setMessage('Identification réussi')
               localStorage.setItem('token', res.headers['x-access-token'])
-              origin.location.origin
+              origin.location
                 ? history.push(origin.location.origin)
                 : history.push('')
             }
