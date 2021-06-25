@@ -19,7 +19,12 @@ legend {
   margin: 0;
   width: 85%;
 }
-.passwordLegend{
+.passwordForm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.passwordLegend {
   margin-bottom: 1rem;
 }
 .required {

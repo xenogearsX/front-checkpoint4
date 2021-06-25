@@ -11,8 +11,8 @@ const SignUp = () => {
   const [zipCode, setZipCode] = useState('')
   const [city, setCity] = useState('')
   const [country, setCountry] = useState('France')
-  const [confirmPassword, setConfirmPassword] = useState('')
   const [message, setMessage] = useState(null)
+  const [showPassword, setShowPassword] = useState(true)
 
   const allPost = {
     email: email,
@@ -31,8 +31,6 @@ const SignUp = () => {
       ? setEmail(e.target.value)
       : e.target.name === 'password'
       ? setPassword(e.target.value)
-      : e.target.name === 'confirmPassword'
-      ? setConfirmPassword(e.target.value)
       : e.target.name === 'firstName'
       ? setFirstName(e.target.value)
       : e.target.name === 'lastName'
@@ -50,16 +48,14 @@ const SignUp = () => {
 
   const submitForm = e => {
     e.preventDefault()
-    password === confirmPassword
-      ? axios
-          .post('http://localhost:3030/account', allPost)
-          .then(res => {
-            setMessage(res.data + ' ' + email)
-          })
-          .catch(e => {
-            setMessage(`Erreur lors de la création : ${e.message}`)
-          })
-      : setMessage('Les mots de passe ne correspondent pas.')
+    axios
+      .post('http://localhost:3030/account', allPost)
+      .then(res => {
+        setMessage(res.data + ' ' + email)
+      })
+      .catch(e => {
+        setMessage(`Erreur lors de la création : ${e.message}`)
+      })
   }
 
   return (
@@ -85,32 +81,29 @@ const SignUp = () => {
             />
           </fieldset>
           <fieldset className='formData'>
-            <legend htmlFor='password'>
+            <legend className='passwordLegend' htmlFor='password'>
               Mot de passe<span> * </span>
             </legend>
-            <input
-              type='password'
-              id='password'
-              name='password'
-              placeholder='example123$'
-              onChange={handleChange}
-              required
-              value={password}
-            />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='confirmPassword'>
-              Confirmez le mot de passe<span> * </span>
-            </legend>
-            <input
-              type='password'
-              id='confirmPassword'
-              name='confirmPassword'
-              placeholder='Veuillez retaper votre mot de passe'
-              onChange={handleChange}
-              required
-              value={confirmPassword}
-            />
+            <div className='passwordForm'>
+              <input
+                type={showPassword ? 'password' : 'text'}
+                id='password'
+                name='password'
+                placeholder='example123$'
+                onChange={handleChange}
+                required
+                value={password}
+              />
+              <button
+                className={showPassword ? 'showPassword' : 'showPassword cross'}
+                onClick={e => {
+                  e.preventDefault()
+                  setShowPassword(!showPassword)
+                }}
+              >
+                👁️
+              </button>
+            </div>
           </fieldset>
           <fieldset className='formData'>
             <legend htmlFor='firstName'>
