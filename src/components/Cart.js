@@ -42,6 +42,7 @@ const Cart = () => {
       )}
       {cart[5] !== null ? (
         <button
+          className='add'
           onClick={() =>
             cart[0].length === 0 || cart[4] === 0
               ? setMessage('Commande impossible, panier vide')
@@ -80,7 +81,7 @@ const Cart = () => {
           Identification avant commande
         </Link>
       )}
-      {message ? <p>{message}</p> : null}
+      {message ? <p className='message'>{message}</p> : null}
     </div>
   )
 }
