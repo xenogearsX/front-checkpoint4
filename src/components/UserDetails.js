@@ -11,8 +11,7 @@ import './UserDetails.css'
 import modifier from '../data/images/Modifier.png'
 
 const UserDetails = () => {
-  useProtected()
-
+  const [isLoading] = useProtected()
   const account = useContext(UserContext)[5]
   const [user, setUser] = useState([])
 
@@ -28,7 +27,9 @@ const UserDetails = () => {
       })
   }, [])
 
-  return (
+  return isLoading ? (
+    <div className='userDetails'>Loading...</div>
+  ) : (
     <div className='userDetails'>
       <h1>Données personnelles</h1>
       <table>
