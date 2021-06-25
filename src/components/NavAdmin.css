@@ -37,6 +37,7 @@
 }
 .message{
   font-family: 'black_jackregular';
+  margin: 1rem;
 }
 #navAdmin{
   align-items: center;
