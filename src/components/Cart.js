@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react'
+
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -42,10 +43,11 @@ const Cart = () => {
       {cart[5] !== null ? (
         <button
           onClick={() =>
-            cart[0].length === 0
+            cart[0].length === 0 || cart[4] === 0
               ? setMessage('Commande impossible, panier vide')
               : axios
                   .post('http://localhost:3030/order', {
+                    date: new Date().toLocaleDateString(),
                     orderitems: cart[0].map(element => {
                       const {
                         shortdescription,
@@ -60,8 +62,8 @@ const Cart = () => {
                       } = element
                       return item
                     }),
-                    account_idaccount: cart[5],
-                    total: cart[4]
+                    total: cart[4],
+                    account_idaccount: cart[5]
                   })
                   .then(res => {
                     setMessage(res.data)
