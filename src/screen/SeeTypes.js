@@ -55,7 +55,9 @@ const SeeTypes = () => {
                       setTrigger(!trigger)
                     })
                     .catch(e => {
-                      setMessage(`Erreur lors de la suppression : ${e.message}`)
+                      setMessage(
+                        `Erreur lors de la suppression : ${e.response.data}`
+                      )
                     })
                 }}
               >
@@ -65,7 +67,7 @@ const SeeTypes = () => {
           ))}
         </tbody>
       </table>
-      <p>{message}</p>
+      <p className='message'>{message}</p>
     </div>
   )
 }
