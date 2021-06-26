@@ -54,7 +54,11 @@ const SignUp = () => {
         setMessage(res.data + ' ' + email)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(
+          `Erreur lors de la création : ${
+            e.response ? e.response.data : e.message
+          }`
+        )
       })
   }
 
