@@ -7,6 +7,7 @@ import Cart from './components/Cart'
 import Clothes from './screen/Clothes'
 import Denied from './screen/Denied'
 import Details from './screen/Details'
+import ForgotPassword from './screen/ForgotPassword'
 import Header from './components/Header'
 import Home from './screen/Home'
 import Jewels from './screen/Jewels'
@@ -59,6 +60,7 @@ const App = () => {
           <Route path='/clothes' component={Clothes} />
           <Route path='/denied' component={Denied} />
           <Route path='/details/:id' component={Details} />
+          <Route path='/forgot' component={ForgotPassword} />
           <Route path='/jewels' component={Jewels} />
           <Route path='/signin' component={SignIn} />
           <Route path='/signup' component={SignUp} />
