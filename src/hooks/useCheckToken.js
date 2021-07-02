@@ -13,18 +13,16 @@ export const useCheckToken = () => {
 
   const checkToken = () => {
     const token = localStorage.getItem('token')
-    axios({
-      method: 'POST',
-      url: 'http://localhost:3030/account/protected',
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(res => {
-      if (res.data.idAccount) {
-        account[6](res.data.idAccount)
-        account[8](res.data.isAdmin)
-      }
-    })
+    axios
+      .post('http://localhost:3030/account/protected', {
+        authorization: `Bearer ${token}`
+      })
+      .then(res => {
+        if (res.data.idAccount) {
+          account[6](res.data.idAccount)
+          account[8](res.data.isAdmin)
+        }
+      })
   }
   return
 }
