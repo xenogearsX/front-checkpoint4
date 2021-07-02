@@ -1,19 +1,20 @@
-.connect {
-  border: rgb(241, 113, 113) 1px solid ;
-  width: 90%;
-}
 .cross {
   background-color: rgb(241, 113, 113);
+}
+.forgotLink {
+  color: black;
+  font-family: 'black_jackregular';
+  text-decoration: none;
+}
+.forgotLink:hover {
+  color: rgb(241, 113, 113);
+  text-decoration: underline;
 }
 .formData span, .required span {
   color: rgb(241, 113, 113);
 }
 legend {
   margin-left: 1rem;
-}
-.password {
-  display: flex;
-  justify-content: center;
 }
 #password {
   margin: 0;
@@ -22,13 +23,21 @@ legend {
 .passwordForm {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
 }
 .passwordLegend {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 1rem;
+  width: 92%;
 }
 .required {
   margin: 1rem;
+}
+.send {
+  cursor: pointer;
+}
+.send:active {
+  transform: translateY(1px);
 }
 .showPassword {
   border-width: 1px 1px 1px 0;

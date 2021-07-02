@@ -86,7 +86,9 @@ const SignUp = () => {
           </fieldset>
           <fieldset className='formData'>
             <legend className='passwordLegend' htmlFor='password'>
-              Mot de passe<span> * </span>
+              <p>
+                Mot de passe<span> * </span>
+              </p>
             </legend>
             <div className='passwordForm'>
               <input
@@ -208,11 +210,11 @@ const SignUp = () => {
               value={country}
             />
           </fieldset>
-          <p>
+          <p className='required'>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input className='send' type='submit' value='Valider le produit' />
+            <input className='send' type='submit' value='Créer votre compte' />
           </div>
         </div>
       </form>
