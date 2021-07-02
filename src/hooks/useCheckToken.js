@@ -12,17 +12,18 @@ export const useCheckToken = () => {
   }, [])
 
   const checkToken = () => {
-    const token = localStorage.getItem('token')
-    axios
-      .post('http://localhost:3030/account/protected', {
-        authorization: `Bearer ${token}`
-      })
-      .then(res => {
-        if (res.data.idAccount) {
-          account[6](res.data.idAccount)
-          account[8](res.data.isAdmin)
-        }
-      })
+    if (localStorage.getItem('token')) {
+      const token = localStorage.getItem('token')
+      axios
+        .post('http://localhost:3030/account/protected', {
+          authorization: `Bearer ${token}`
+        })
+        .then(res => {
+          if (res.data.idAccount) {
+            account[6](res.data.idAccount)
+            account[8](res.data.isAdmin)
+          }
+        })
+    }
   }
-  return
 }
