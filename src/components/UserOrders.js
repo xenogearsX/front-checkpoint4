@@ -1,5 +1,7 @@
-import axios from 'axios'
 import { useContext, useEffect, useState } from 'react'
+
+import axios from 'axios'
+
 import UserContext from '../context/UserContext'
 
 const UserOrders = () => {

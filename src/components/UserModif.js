@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import axios from 'axios'
 
-import { useProtected } from '../hooks/useProtected'
+import useProtected from '../hooks/useProtected'
 
 const UserModif = account => {
   useProtected()

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-import { useProtected } from '../hooks/useProtected'
+import useProtected from '../hooks/useProtected'
 
 import modifier from '../data/images/Modifier.png'
 

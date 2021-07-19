@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom'
 
-import { useProtected } from '../hooks/useProtected'
 import NavAccount from '../components/NavAccount'
+import useProtected from '../hooks/useProtected'
 import UserDetails from '../components/UserDetails'
 import UserModif from '../components/UserModif'
 import UserOrders from '../components/UserOrders'

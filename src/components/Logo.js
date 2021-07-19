@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { useCheckToken } from '../hooks/useCheckToken'
+import useCheckToken from '../hooks/useCheckToken'
 
 const Logo = () => {
   localStorage.getItem('token') ? useCheckToken() : null

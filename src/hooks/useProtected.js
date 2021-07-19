@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
+
 import UserContext from '../context/UserContext'
 
-export const useProtected = () => {
+const useProtected = () => {
   const account = useContext(UserContext)
   const [isLoading, setIsloading] = useState(true)
-  let history = useHistory()
+  const history = useHistory()
 
   useEffect(() => {
     protectedRoute()
@@ -19,7 +21,6 @@ export const useProtected = () => {
         authorization: `Bearer ${token}`
       })
       .then(res => {
-        console.log(res)
         if (res.data.idAccount) {
           account[6](res.data.idAccount)
           account[8](res.data.isAdmin)
@@ -32,3 +33,5 @@ export const useProtected = () => {
   }
   return [isLoading]
 }
+
+export default useProtected

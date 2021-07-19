@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import UserContext from '../context/UserContext'
 
-export const useCheckToken = () => {
+const useCheckToken = () => {
   const account = useContext(UserContext)
 
   useEffect(() => {
@@ -27,3 +27,5 @@ export const useCheckToken = () => {
     }
   }
 }
+
+export default useCheckToken

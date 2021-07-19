@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import UserContext from '../context/UserContext'
-import { useProtected } from '../hooks/useProtected'
+import useProtected from '../hooks/useProtected'
 
 import './UserDetails.css'
 

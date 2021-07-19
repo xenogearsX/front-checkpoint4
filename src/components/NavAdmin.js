@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+
 import { NavLink, Route, Switch } from 'react-router-dom'
 
 import Admin from '../screen/Admin'
@@ -11,7 +12,7 @@ import ModifTypeGroup from '../screen/ModifTypeGroup'
 import SeeProducts from '../screen/SeeProducts'
 import SeeTypeGroups from '../screen/SeeTypeGroups'
 import SeeTypes from '../screen/SeeTypes'
-import { useProtected } from '../hooks/useProtected'
+import useProtected from '../hooks/useProtected'
 import UserContext from '../context/UserContext'
 
 import './NavAdmin.css'
