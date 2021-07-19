@@ -7,12 +7,18 @@ import UserModif from '../components/UserModif'
 import UserOrders from '../components/UserOrders'
 import Welcome from '../components/Welcome'
 
+import './Account.css'
+
 const Account = () => {
   const [isLoading] = useProtected()
 
   return (
     <div className='account'>
-      {isLoading ? <div>loading</div> : <NavAccount />}
+      {isLoading ? (
+        <div className='loading'>Chargement...</div>
+      ) : (
+        <NavAccount />
+      )}
       <Switch>
         <Route exact path='/account' component={Welcome} />
         <Route path='/account/details' component={UserDetails} />

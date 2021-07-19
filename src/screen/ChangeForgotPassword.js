@@ -26,7 +26,7 @@ const ChangeForgotPassword = account => {
           })
   }
 
-  return (
+  return idAccount ? (
     <div className='form'>
       <div className='formTitle'>
         <h1>Changement du mot de passe oublié</h1>
@@ -71,6 +71,8 @@ const ChangeForgotPassword = account => {
         </div>
       </form>
     </div>
+  ) : (
+    <div className='loading'>Chargement...</div>
   )
 }
 
