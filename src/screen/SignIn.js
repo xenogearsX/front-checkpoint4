@@ -12,7 +12,7 @@ const SignIn = origin => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState(null)
   const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(true)
+  const [showPassword, setShowPassword] = useState(false)
 
   const account = useContext(UserContext)
   const history = useHistory()
@@ -77,7 +77,7 @@ const SignIn = origin => {
             </legend>
             <div className='passwordForm'>
               <input
-                type={showPassword ? 'password' : 'text'}
+                type={showPassword ? 'text' : 'password'}
                 id='password'
                 name='password'
                 placeholder='example123$'
@@ -86,7 +86,7 @@ const SignIn = origin => {
                 value={password}
               />
               <button
-                className={showPassword ? 'showPassword' : 'showPassword cross'}
+                className={showPassword ? 'showPassword cross' : 'showPassword'}
                 onClick={e => {
                   e.preventDefault()
                   setShowPassword(!showPassword)

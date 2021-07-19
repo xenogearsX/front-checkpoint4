@@ -12,7 +12,7 @@ const SignUp = () => {
   const [city, setCity] = useState('')
   const [country, setCountry] = useState('France')
   const [message, setMessage] = useState(null)
-  const [showPassword, setShowPassword] = useState(true)
+  const [showPassword, setShowPassword] = useState(false)
 
   const allPost = {
     email: email,
@@ -92,7 +92,7 @@ const SignUp = () => {
             </legend>
             <div className='passwordForm'>
               <input
-                type={showPassword ? 'password' : 'text'}
+                type={showPassword ? 'text' : 'password'}
                 id='password'
                 name='password'
                 placeholder='example123$'
@@ -101,7 +101,7 @@ const SignUp = () => {
                 value={password}
               />
               <button
-                className={showPassword ? 'showPassword' : 'showPassword cross'}
+                className={showPassword ? 'showPassword cross' : 'showPassword'}
                 onClick={e => {
                   e.preventDefault()
                   setShowPassword(!showPassword)
