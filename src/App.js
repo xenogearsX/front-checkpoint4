@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router'
 
 import Account from './screen/Account'
+import BadLink from './screen/BadLink'
 import Bags from './screen/Bags'
 import Cart from './components/Cart'
+import ChangeForgotPassword from './screen/ChangeForgotPassword'
 import Clothes from './screen/Clothes'
 import Denied from './screen/Denied'
 import Details from './screen/Details'
@@ -55,12 +57,14 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route path='/account' component={Account} />
           <Route path='/admin' component={NavAdmin} />
+          <Route path='/badlink' component={BadLink} />
           <Route path='/bags' component={Bags} />
           <Route path='/cart' component={Cart} />
           <Route path='/clothes' component={Clothes} />
           <Route path='/denied' component={Denied} />
           <Route path='/details/:id' component={Details} />
-          <Route path='/forgot' component={ForgotPassword} />
+          <Route exact path='/forgot' component={ForgotPassword} />
+          <Route path='/forgot/:jwt' component={ChangeForgotPassword} />
           <Route path='/jewels' component={Jewels} />
           <Route path='/signin' component={SignIn} />
           <Route path='/signup' component={SignUp} />
