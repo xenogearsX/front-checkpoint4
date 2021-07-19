@@ -1,25 +1,25 @@
-.arrow{
+.arrow {
   height: 50px;
   width: 50px;
 }
 .description {
   margin-bottom: 1rem;
 }
-.details{
+.details {
   font-family: "black_jackregular";
 }
-.detailsTitle{
+.detailsTitle {
   align-items: center;
   display: flex;
   justify-content: space-around;
   margin: 1rem;
 }
-.image{
+.image {
   width: 30%;
 }
 
-@media (max-width: 600px){
-  .image{
+@media (max-width: 600px) {
+  .image {
     width: 60%;
   }
 }

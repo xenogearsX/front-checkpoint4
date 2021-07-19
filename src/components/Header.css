@@ -24,7 +24,7 @@
   position: relative;
   width: 35px;
 }
-#header{
+#header {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -32,19 +32,19 @@
   margin-top: 1rem;
   width: 100vw;
 }
-.icon{
+.icon {
   align-items: center;
   display: flex;
   justify-content: space-around;
 }
-.icon img{
+.icon img {
   border: black 3px solid;
   border-radius: 50%;
   position: absolute;
   height: 35px;
   width: 35px;
 }
-.length{
+.length {
   background: rgb(241, 113, 113);
   border-radius: 50%;
   display: flex;
@@ -57,7 +57,7 @@
   width: 1.3rem;
   z-index: 5;
 }
-.logo{
+.logo {
   color: rgb(241, 113, 113);
   font-family: 'BallparkWeiner';
   font-size: 2rem;
@@ -65,19 +65,19 @@
   margin-right: 0.5rem;
   text-decoration: none;
 }
-.logout{
+.logout {
   color: rgb(241, 113, 113);
   cursor: pointer;
   margin: 0px 2px 0px 2px;
 }
-#menuBurger{
+#menuBurger {
   margin-right: 1rem;
 }
-.sign{
+.sign {
   display: flex;
   margin: 0px 2px 0px 2px;;
 }
-.sign a{
+.sign a {
   color: rgb(241, 113, 113);
   margin: 0px 5px 0px 5px;
   text-decoration: none;

@@ -2,20 +2,20 @@
   border: rgb(241, 113, 113) 1px solid;
   margin: 1rem;
 }
-.card{
+.card {
   font-family: "black_jackregular";
   padding: 20px;
   width: 350px;
 }
-.card a{
+.card a {
   color: black;
   text-decoration: none;
 }
-.card img{
+.card img {
   height: 350px;
   width: 100%;
 }
-.cards{
+.cards {
   display: flex;
   flex-wrap: wrap ;
   justify-content: space-around;

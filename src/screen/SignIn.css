@@ -47,7 +47,7 @@ legend {
   width: 5%;
 }
 
-@media (max-width: 500px){
+@media (max-width: 500px) {
   .showPassword {
     font-size: 0.6rem;
   }

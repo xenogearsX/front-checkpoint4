@@ -1,18 +1,18 @@
-.navAccount{
+.navAccount {
   margin-bottom: 1rem;
   width: 100%;
 }
-.navAccount a{
+.navAccount a {
   color: black;
   font-family: 'black_jackregular';
   text-decoration: none;
 }
-.navAccount li{
+.navAccount li {
   background: rgb(241, 113, 113);
   list-style: none;
   padding: 1rem;
 }
-.navAccount ul{
+.navAccount ul {
   background: rgb(241, 113, 113);
   display: flex;
   justify-content: space-around;

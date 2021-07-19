@@ -1,64 +1,64 @@
-.adminForm{
+.adminForm {
   align-items: center;
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.adminForm h1, .formTitle{
+.adminForm h1, .formTitle {
   color: rgb(241, 113, 113);
   font-family: 'black_jackregular';
   font-weight: bold;
   font-size: 2rem;
   margin: 1rem;
 }
-.adminForm span{
+.adminForm span {
   color: rgb(241, 113, 113);
 }
-.containerAdmin{
+.containerAdmin {
   font-family: 'black_jackregular';
   width: 100%;
 }  
-.form{
+.form {
   width: 100%;
 }
-.form form{
+.form form {
   display: flex;
   justify-content: center;
   margin: 1rem;
 }
-.form input, .form select{
+.form input, .form select {
   border: rgb(241, 113, 113) 1px solid;
   font-family: 'black_jackregular';
   margin: 1rem;
   width: 90%;
 }
-.form select{
+.form select {
   text-align: center;
 }
-.message{
+.message {
   font-family: 'black_jackregular';
   margin: 1rem;
 }
-#navAdmin{
+#navAdmin {
   align-items: center;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.navAdmin{
+.navAdmin {
   width: 100%;
 }
-.navAdmin a{
+.navAdmin a {
   color: black;
   font-family: 'black_jackregular';
   text-decoration: none;
 }
-.navAdmin li{
+.navAdmin li {
   background: rgb(241, 113, 113);
   list-style: none;
   padding: 1rem;
 }
-.navAdmin ul{
+.navAdmin ul {
   background: rgb(241, 113, 113);
   display: flex;
   justify-content: space-around;
@@ -66,23 +66,23 @@
   margin: 0;
   width: 100%;
 }
-.pointer{
+.pointer {
   cursor: pointer;
 }
-.table{
+.table {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-.table a{
+.table a {
   color: rgb(241, 113, 113);
 }
-.table td, .table th{
+.table td, .table th {
   border: 1px solid black;
   font-family: 'black_jackregular';
   padding: 0.5rem;
   vertical-align: middle;
 }
-.table th{
+.table th {
   background: rgb(241, 113, 113);
 }
