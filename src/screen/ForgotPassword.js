@@ -13,7 +13,7 @@ const ForgotPassword = () => {
     email === ''
       ? setMessage('Veuillez saisir votre email.')
       : axios
-          .post('http://localhost:3030/account/forgot', {
+          .post('http://localhost:3030/password/forgot', {
             email: email
           })
           .then(res => {
@@ -23,6 +23,9 @@ const ForgotPassword = () => {
 
   return (
     <div className='form'>
+      <div className='formTitle'>
+        <h1>Réinitialisation mot de passe</h1>
+      </div>
       <form onSubmit={submitForm}>
         <div className='containerAdmin'>
           <fieldset className='formData'>
