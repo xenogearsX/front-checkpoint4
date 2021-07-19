@@ -1,4 +1,4 @@
-#menu{
+#menu {
   align-items: center;
   background: rgb(241, 113, 113);
   display: flex;
@@ -10,28 +10,41 @@
   width: 50%;
   z-index: 10;
 }
-#menu a{
+#menu a {
   color: black;
   font-family: 'black_jackregular';
   font-size: xx-large;
   text-decoration: none;
 }
-#menu li{
+#menu li {
   list-style: none;
   margin: 10vh 0 10vh 0;
   width: 100%;
 }
-.nav{
+.nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.selected{
+#navAside {
+  background-color: grey;
+  height: 100%;
+  left: 0;
+  opacity: 50%;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  z-index: 10;
+}
+.selected {
   border-bottom: 3px solid black;
 }
 
-@media (max-width: 600px){
-  #menu{
+@media (max-width: 600px) {
+  #menu {
     width:100%;
+  }
+  #navAside {
+    display: none;
   }
 }

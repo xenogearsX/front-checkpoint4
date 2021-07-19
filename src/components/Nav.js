@@ -7,52 +7,55 @@ import './Nav.css'
 const Nav = header => {
   const admin = useContext(UserContext)[7]
   return (
-    <nav id='menu'>
-      <ul className='nav'>
-        <li>
-          <NavLink
-            to='/jewels'
-            className='link'
-            activeClassName='selected'
-            onClick={() => header.handleClick()}
-          >
-            Bijoux
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/bags'
-            className='link'
-            activeClassName='selected'
-            onClick={() => header.handleClick()}
-          >
-            Maroquinerie
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/clothes'
-            className='link'
-            activeClassName='selected'
-            onClick={() => header.handleClick()}
-          >
-            Prêt-à-porter
-          </NavLink>
-        </li>
-        {admin ? (
+    <div id='nav'>
+      <div id='navAside' onClick={() => header.handleClick()}></div>
+      <nav id='menu'>
+        <ul className='nav'>
           <li>
             <NavLink
-              to='/admin'
+              to='/jewels'
               className='link'
               activeClassName='selected'
               onClick={() => header.handleClick()}
             >
-              Administration
+              Bijoux
             </NavLink>
           </li>
-        ) : null}
-      </ul>
-    </nav>
+          <li>
+            <NavLink
+              to='/bags'
+              className='link'
+              activeClassName='selected'
+              onClick={() => header.handleClick()}
+            >
+              Maroquinerie
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/clothes'
+              className='link'
+              activeClassName='selected'
+              onClick={() => header.handleClick()}
+            >
+              Prêt-à-porter
+            </NavLink>
+          </li>
+          {admin ? (
+            <li>
+              <NavLink
+                to='/admin'
+                className='link'
+                activeClassName='selected'
+                onClick={() => header.handleClick()}
+              >
+                Administration
+              </NavLink>
+            </li>
+          ) : null}
+        </ul>
+      </nav>
+    </div>
   )
 }
 
