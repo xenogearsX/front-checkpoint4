@@ -17,7 +17,7 @@ const ChangeForgotPassword = account => {
     password === ''
       ? setMessage('Veuillez saisir un mot de passe.')
       : axios
-          .post('http://localhost:3030/password/change', {
+          .post('http://localhost:3030/password/reset', {
             password: password,
             idAccount: idAccount
           })
