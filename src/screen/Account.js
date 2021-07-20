@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom'
 
+import ChangePassword from '../components/ChangePassword'
 import NavAccount from '../components/NavAccount'
 import useProtected from '../hooks/useProtected'
 import UserDetails from '../components/UserDetails'
@@ -21,6 +22,7 @@ const Account = () => {
       )}
       <Switch>
         <Route exact path='/account' component={Welcome} />
+        <Route path='/account/changepassword' component={ChangePassword} />
         <Route path='/account/details' component={UserDetails} />
         <Route path='/account/orders' component={UserOrders} />
         <Route path='/account/usermodif/:id' component={UserModif} />

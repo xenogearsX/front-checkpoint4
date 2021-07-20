@@ -24,6 +24,15 @@ const NavAccount = () => {
             Commandes
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to='/account/changepassword'
+            className='link'
+            activeClassName='selected'
+          >
+            Changer de mot de passe
+          </NavLink>
+        </li>
       </ul>
     </div>
   )
