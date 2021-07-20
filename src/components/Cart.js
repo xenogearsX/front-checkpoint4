@@ -68,9 +68,10 @@ const Cart = () => {
                   })
                   .then(res => {
                     setMessage(res.data)
+                    cart[1]([])
                   })
                   .catch(e => {
-                    setMessage(`Erreur lors de la création : ${e.message}`)
+                    setMessage(`Erreur lors de la commande : ${e.message}`)
                   })
           }
         >
