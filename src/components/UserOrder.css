@@ -1,0 +1,21 @@
+#order {
+  font-family: 'black_jackregular';
+}
+.order {
+  display: flex;
+  justify-content: center;
+}
+#order h1 {
+  font-size: 2rem;
+}
+#order h2 {
+  color: rgb(241, 113, 113);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+#order li {
+  margin: 0.2rem;
+}
+#orderList {
+  margin: 1rem;
+}
